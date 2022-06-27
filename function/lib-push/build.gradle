@@ -13,22 +13,7 @@ android {
         productFlavors {
             chat33pro {
                 manifestPlaceholders = [
-                        HUAWEI_PUSH_ID: "appid=104153157"
-                ]
-            }
-            assets {
-                manifestPlaceholders = [
-                        HUAWEI_PUSH_ID: "appid=104926975"
-                ]
-            }
-            police {
-                manifestPlaceholders = [
-                        HUAWEI_PUSH_ID: "appid=104740339"
-                ]
-            }
-            zhchat {
-                manifestPlaceholders = [
-                        HUAWEI_PUSH_ID: "appid=105384959"
+                        HUAWEI_PUSH_ID: "appid="
                 ]
             }
         }

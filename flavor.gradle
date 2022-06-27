@@ -15,15 +15,6 @@ android {
         chat33pro {
             dimension "channel"
         }
-        assets {
-            dimension "channel"
-        }
-        police {
-            dimension "channel"
-        }
-        zhchat {
-            dimension "channel"
-        }
     }
 
     signingConfigs {

@@ -15,21 +15,6 @@ android {
             versionName version_name
             applicationId "com.fzm.chatpro"
         }
-        assets {
-            versionCode assets_version_code
-            versionName assets_version_name
-            applicationId "com.orginone.chat"
-        }
-        police {
-            versionCode police_version_code
-            versionName police_version_name
-            applicationId "com.police.chat"
-        }
-        zhchat {
-            versionCode zhchat_version_code
-            versionName zhchat_version_name
-            applicationId "com.zhchat.chat"
-        }
         develop {
             applicationIdSuffix '.develop'
         }
