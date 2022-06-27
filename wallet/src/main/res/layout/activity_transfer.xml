@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transfer_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biz_color_primary">
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/biz_color_primary_dark">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="center"
+                android:src="@drawable/biz_ic_back_dark" />
+
+            <LinearLayout
+                android:id="@+id/ll_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="5dp"
+                android:layout_toEndOf="@id/iv_back"
+                android:alpha="0"
+                android:gravity="center_vertical"
+                android:translationY="30dp">
+
+                <com.fzm.chat.biz.widget.ChatAvatarView
+                    android:id="@+id/iv_title_avatar"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:cornerRadius="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:textColor="@color/biz_text_grey_dark"
+                        tools:text="昵称备注" />
+
+                    <TextView
+                        android:id="@+id/tv_title_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="middle"
+                        android:singleLine="true"
+                        android:textColor="@color/biz_text_grey_light"
+                        tools:text="15hdhuhuudusbcudchhdhuhuudusbcudch" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_bottom"
+            android:layout_below="@+id/rl_title"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/biz_color_primary_dark"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="45dp">
+
+                    <com.fzm.chat.biz.widget.ChatAvatarView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        tools:src="@mipmap/default_avatar_round" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="17sp"
+                        tools:text="昵称/备注" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="middle"
+                        android:paddingHorizontal="10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="14sp"
+                        tools:text="15hdhuhuudusbcudchhdhuhuudusbcudch" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-30dp"
+                    android:orientation="vertical"
+                    app:bl_corners_topLeftRadius="30dp"
+                    app:bl_corners_topRightRadius="30dp"
+                    app:bl_solid_color="@color/biz_color_primary"
+                    tools:ignore="MissingPrefix">
+
+                    <TextView
+                        android:id="@+id/tv_transfer_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="30sp"
+                        app:drawableEndCompat="@drawable/ic_arrow_right"
+                        tools:text="BTY转账" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="30dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:drawablePadding="5dp"
+                            android:text="转账数额"
+                            android:textColor="@color/biz_text_grey_dark"
+                            app:drawableStartCompat="@drawable/ic_block_accent" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="余额：--"
+                            android:textColor="@color/biz_color_accent" />
+                    </RelativeLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/frameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="5dp"
+                        app:bl_corners_radius="5dp"
+                        app:bl_solid_color="@color/biz_color_primary_dark">
+
+                        <EditText
+                            android:id="@+id/et_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="请输入数量"
+                            android:inputType="numberDecimal"
+                            android:maxLength="20"
+                            android:paddingHorizontal="15dp"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textColorHint="@color/biz_text_grey_light"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent" />
+                    </FrameLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:drawablePadding="5dp"
+                            android:text="手续费"
+                            android:textColor="@color/biz_text_grey_dark"
+                            app:drawableStartCompat="@drawable/ic_block_accent" />
+
+                        <TextView
+                            android:id="@+id/tv_fee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/biz_text_grey_light"
+                            android:text="--" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_remote_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_remote_note_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="5dp"
+                                android:text="上链备注"
+                                android:textColor="@color/biz_text_grey_dark"
+                                app:drawableStartCompat="@drawable/ic_block_accent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(选填)"
+                                android:textColor="@color/biz_text_grey_light" />
+
+                            <ImageView
+                                android:id="@+id/remote_note_tips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:src="@drawable/ic_help" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/et_remote_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ll_remote_note_tips"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_bg_selector"
+                            android:maxLength="60"
+                            android:minHeight="40dp"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_local_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_local_note_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="5dp"
+                                android:text="本地备注"
+                                android:textColor="@color/biz_text_grey_dark"
+                                app:drawableStartCompat="@drawable/ic_block_accent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="(选填)"
+                                android:textColor="@color/biz_text_grey_light" />
+
+                            <ImageView
+                                android:id="@+id/local_note_tips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:src="@drawable/ic_help" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/et_local_note"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ll_local_note_tips"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_bg_selector"
+                            android:maxLength="60"
+                            android:minHeight="40dp"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/biz_color_primary">
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_round_accent_solid_20"
+                android:enabled="false"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="确认转账" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/drawer_content"
+        layout="@layout/transfer_drawer" />
+</androidx.drawerlayout.widget.DrawerLayout>

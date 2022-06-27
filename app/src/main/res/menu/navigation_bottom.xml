@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_session"
+        android:icon="@drawable/app_tab_session_selector"
+        android:orderInCategory="0x00010001"
+        android:title="@string/app_tab_session" />
+
+    <item
+        android:id="@+id/tab_contract"
+        android:icon="@drawable/app_tab_contact_selector"
+        android:orderInCategory="0x00010002"
+        android:title="@string/app_tab_contact" />
+
+    <item
+        android:id="@+id/tab_account"
+        android:icon="@drawable/app_tab_account_selector"
+        android:orderInCategory="0x00010005"
+        android:title="@string/app_tab_account" />
+</menu>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fzm.widget.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:gravity="center_vertical"
+            android:text="成员信息"
+            android:textColor="@color/biz_color_accent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_name_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="姓名"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/tv_name_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="真实姓名最多20个字多的省略号这样这样这样这样这样这样这样这样" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_comapny_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="团队"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_company_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/tv_comapny_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="杭州复杂美科技有限公司" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider_phone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:id="@+id/call_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_phone_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="手机号"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toStartOf="@+id/iv_phone"
+                android:layout_toEndOf="@+id/tv_phone_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="12312341234" />
+
+            <ImageView
+                android:id="@+id/iv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_contact_info_phone" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider_short_num"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:id="@+id/call_short_num"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_short_num_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="短号"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_short_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toStartOf="@+id/iv_short_num"
+                android:layout_toEndOf="@+id/tv_short_num_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="123456" />
+
+            <ImageView
+                android:id="@+id/iv_short_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_contact_info_phone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_email_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="邮箱"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_email_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/tv_email_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="abc@33.cn" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_dep_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="部门"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_dep_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/tv_dep_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="开发部门" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="15dp">
+
+            <TextView
+                android:id="@+id/tv_pos_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="职位"
+                android:textColor="@color/biz_text_grey_light" />
+
+            <TextView
+                android:id="@+id/tv_pos_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/tv_pos_tips"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="主管" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.fzm.widget.ShadowLayout>

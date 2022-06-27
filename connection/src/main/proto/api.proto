@@ -1,0 +1,10 @@
+// protoc -I=. -I=$GOPATH/src --go_out=plugins=grpc:. *.proto
+syntax = "proto3";
+
+package dtalk.proto;
+option go_package = ".;proto";
+
+message Proto {
+  int32 event = 1;
+  bytes body = 2;
+}

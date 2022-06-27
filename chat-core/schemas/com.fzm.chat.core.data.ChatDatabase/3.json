@@ -1,0 +1,792 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "6af8992814d09da8b2fb942edba12c27",
+    "entities": [
+      {
+        "tableName": "user_info",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`searchKey` TEXT NOT NULL, `address` TEXT NOT NULL, `nickname` TEXT NOT NULL, `avatar` TEXT NOT NULL, `publicKey` TEXT NOT NULL, `phone` TEXT, `email` TEXT, `servers` TEXT NOT NULL, PRIMARY KEY(`address`))",
+        "fields": [
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nickname",
+            "columnName": "nickname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicKey",
+            "columnName": "publicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "servers",
+            "columnName": "servers",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "address"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "friend_user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`searchKey` TEXT NOT NULL, `address` TEXT NOT NULL, `nickname` TEXT NOT NULL, `avatar` TEXT NOT NULL, `publicKey` TEXT NOT NULL, `flag` INTEGER NOT NULL, `servers` TEXT NOT NULL, `groups` TEXT NOT NULL, `remark` TEXT NOT NULL, PRIMARY KEY(`address`))",
+        "fields": [
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nickname",
+            "columnName": "nickname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "publicKey",
+            "columnName": "publicKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flag",
+            "columnName": "flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "servers",
+            "columnName": "servers",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "groups",
+            "columnName": "groups",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remark",
+            "columnName": "remark",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "address"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "group_info",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`serverUrlKey` TEXT NOT NULL, `searchKey` TEXT NOT NULL, `gid` INTEGER NOT NULL, `avatar` TEXT NOT NULL, `name` TEXT NOT NULL, `server` TEXT NOT NULL, `flag` INTEGER NOT NULL, `markId` TEXT NOT NULL, `owner` TEXT NOT NULL, `person` TEXT, `members` TEXT, `memberNum` INTEGER NOT NULL, `adminNum` INTEGER NOT NULL, `muteNum` INTEGER NOT NULL, `maximum` INTEGER NOT NULL, `status` INTEGER NOT NULL, `friendType` INTEGER NOT NULL, `joinType` INTEGER NOT NULL, `muteType` INTEGER NOT NULL, PRIMARY KEY(`gid`))",
+        "fields": [
+          {
+            "fieldPath": "serverUrlKey",
+            "columnName": "serverUrlKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gid",
+            "columnName": "gid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "server",
+            "columnName": "server",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flag",
+            "columnName": "flag",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "markId",
+            "columnName": "markId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "owner",
+            "columnName": "owner",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "person",
+            "columnName": "person",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "members",
+            "columnName": "members",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "memberNum",
+            "columnName": "memberNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adminNum",
+            "columnName": "adminNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "muteNum",
+            "columnName": "muteNum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maximum",
+            "columnName": "maximum",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "friendType",
+            "columnName": "friendType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "joinType",
+            "columnName": "joinType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "muteType",
+            "columnName": "muteType",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "gid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "group_user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`searchKey` TEXT NOT NULL, `gid` INTEGER NOT NULL, `address` TEXT NOT NULL, `role` INTEGER NOT NULL, `nickname` TEXT NOT NULL, `muteTime` INTEGER NOT NULL, PRIMARY KEY(`gid`, `address`))",
+        "fields": [
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gid",
+            "columnName": "gid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "role",
+            "columnName": "role",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nickname",
+            "columnName": "nickname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "muteTime",
+            "columnName": "muteTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "gid",
+            "address"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "recent_session",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `channelType` INTEGER NOT NULL, `unread` INTEGER NOT NULL, `beAt` INTEGER NOT NULL, `msg_logId` INTEGER NOT NULL, `msg_from` TEXT NOT NULL, `msg_target` TEXT NOT NULL, `msg_datetime` INTEGER NOT NULL, `msg_state` INTEGER NOT NULL, `msg_msgType` INTEGER NOT NULL, `msg_msg` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channelType",
+            "columnName": "channelType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unread",
+            "columnName": "unread",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "beAt",
+            "columnName": "beAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.logId",
+            "columnName": "msg_logId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.from",
+            "columnName": "msg_from",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.target",
+            "columnName": "msg_target",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.datetime",
+            "columnName": "msg_datetime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.state",
+            "columnName": "msg_state",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.msgType",
+            "columnName": "msg_msgType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message.msg",
+            "columnName": "msg_msg",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "chat_message",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`searchKey` TEXT NOT NULL, `logId` INTEGER NOT NULL, `msgId` TEXT NOT NULL, `channelType` INTEGER NOT NULL, `from` TEXT NOT NULL, `target` TEXT NOT NULL, `datetime` INTEGER NOT NULL, `state` INTEGER NOT NULL, `msgType` INTEGER NOT NULL, `msg` TEXT NOT NULL, `source` TEXT, PRIMARY KEY(`logId`, `msgId`))",
+        "fields": [
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "logId",
+            "columnName": "logId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msgId",
+            "columnName": "msgId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channelType",
+            "columnName": "channelType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "from",
+            "columnName": "from",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "target",
+            "columnName": "target",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datetime",
+            "columnName": "datetime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msgType",
+            "columnName": "msgType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msg",
+            "columnName": "msg",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logId",
+            "msgId"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_logId",
+            "unique": false,
+            "columnNames": [
+              "logId"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_logId` ON `${TABLE_NAME}` (`logId`)"
+          },
+          {
+            "name": "index_msgId",
+            "unique": true,
+            "columnNames": [
+              "msgId"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_msgId` ON `${TABLE_NAME}` (`msgId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "search_history",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`keywords` TEXT NOT NULL, `searchTime` INTEGER NOT NULL, PRIMARY KEY(`keywords`))",
+        "fields": [
+          {
+            "fieldPath": "keywords",
+            "columnName": "keywords",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "searchTime",
+            "columnName": "searchTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "keywords"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "ftsVersion": "FTS4",
+        "ftsOptions": {
+          "tokenizer": "mmicu",
+          "tokenizerArgs": [],
+          "contentTable": "chat_message",
+          "languageIdColumnName": "",
+          "matchInfo": "FTS4",
+          "notIndexedColumns": [],
+          "prefixSizes": [],
+          "preferredOrder": "DESC"
+        },
+        "contentSyncTriggers": [
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_chat_message_fts_BEFORE_UPDATE BEFORE UPDATE ON `chat_message` BEGIN DELETE FROM `chat_message_fts` WHERE `docid`=OLD.`rowid`; END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_chat_message_fts_BEFORE_DELETE BEFORE DELETE ON `chat_message` BEGIN DELETE FROM `chat_message_fts` WHERE `docid`=OLD.`rowid`; END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_chat_message_fts_AFTER_UPDATE AFTER UPDATE ON `chat_message` BEGIN INSERT INTO `chat_message_fts`(`docid`, `logId`, `msgId`, `channelType`, `from`, `target`, `datetime`, `state`, `msgType`, `msg`, `source`, `searchKey`) VALUES (NEW.`rowid`, NEW.`logId`, NEW.`msgId`, NEW.`channelType`, NEW.`from`, NEW.`target`, NEW.`datetime`, NEW.`state`, NEW.`msgType`, NEW.`msg`, NEW.`source`, NEW.`searchKey`); END",
+          "CREATE TRIGGER IF NOT EXISTS room_fts_content_sync_chat_message_fts_AFTER_INSERT AFTER INSERT ON `chat_message` BEGIN INSERT INTO `chat_message_fts`(`docid`, `logId`, `msgId`, `channelType`, `from`, `target`, `datetime`, `state`, `msgType`, `msg`, `source`, `searchKey`) VALUES (NEW.`rowid`, NEW.`logId`, NEW.`msgId`, NEW.`channelType`, NEW.`from`, NEW.`target`, NEW.`datetime`, NEW.`state`, NEW.`msgType`, NEW.`msg`, NEW.`source`, NEW.`searchKey`); END"
+        ],
+        "tableName": "chat_message_fts",
+        "createSql": "CREATE VIRTUAL TABLE IF NOT EXISTS `${TABLE_NAME}` USING FTS4(`logId` INTEGER NOT NULL, `msgId` TEXT NOT NULL, `channelType` INTEGER NOT NULL, `from` TEXT NOT NULL, `target` TEXT NOT NULL, `datetime` INTEGER NOT NULL, `state` INTEGER NOT NULL, `msgType` INTEGER NOT NULL, `msg` TEXT NOT NULL, `source` TEXT, `searchKey` TEXT NOT NULL, tokenize=mmicu, content=`chat_message`, order=DESC)",
+        "fields": [
+          {
+            "fieldPath": "logId",
+            "columnName": "logId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msgId",
+            "columnName": "msgId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "channelType",
+            "columnName": "channelType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "from",
+            "columnName": "from",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "target",
+            "columnName": "target",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "datetime",
+            "columnName": "datetime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msgType",
+            "columnName": "msgType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "msg",
+            "columnName": "msg",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "searchKey",
+            "columnName": "searchKey",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "company_user",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`depId` TEXT NOT NULL, `depName` TEXT NOT NULL, `entId` TEXT NOT NULL, `entName` TEXT NOT NULL, `id` TEXT NOT NULL, `leaderId` TEXT, `name` TEXT NOT NULL, `phone` TEXT, `email` TEXT, `position` TEXT, `role` INTEGER NOT NULL, `workplace` TEXT, `joinTime` INTEGER NOT NULL, `isActivated` INTEGER NOT NULL, PRIMARY KEY(`entId`, `id`))",
+        "fields": [
+          {
+            "fieldPath": "depId",
+            "columnName": "depId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "depName",
+            "columnName": "depName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entId",
+            "columnName": "entId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entName",
+            "columnName": "entName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "leaderId",
+            "columnName": "leaderId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "role",
+            "columnName": "role",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workplace",
+            "columnName": "workplace",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "joinTime",
+            "columnName": "joinTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActivated",
+            "columnName": "isActivated",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "entId",
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_company_user_id",
+            "unique": true,
+            "columnNames": [
+              "id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_company_user_id` ON `${TABLE_NAME}` (`id`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "company",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `avatar` TEXT NOT NULL, `name` TEXT NOT NULL, `description` TEXT NOT NULL, `imServer` TEXT NOT NULL, `nodeServer` TEXT NOT NULL, `oaServer` TEXT NOT NULL, `rootDepId` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imServer",
+            "columnName": "imServer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nodeServer",
+            "columnName": "nodeServer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "oaServer",
+            "columnName": "oaServer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rootDepId",
+            "columnName": "rootDepId",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6af8992814d09da8b2fb942edba12c27')"
+    ]
+  }
+}

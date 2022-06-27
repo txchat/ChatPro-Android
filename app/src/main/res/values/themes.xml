@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Chat33Pro" parent="QMUI.Compat.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/biz_color_accent</item>
+        <item name="colorPrimaryVariant">@color/biz_color_accent</item>
+        <item name="colorOnPrimary">@color/biz_color_primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/biz_color_title</item>
+        <item name="colorSecondaryVariant">@color/biz_color_title</item>
+        <item name="colorOnSecondary">@color/biz_color_primary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColorHint">@color/biz_text_grey_light</item>
+        <item name="android:textColor">@color/biz_text_grey_dark</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/app_splash_layer</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>

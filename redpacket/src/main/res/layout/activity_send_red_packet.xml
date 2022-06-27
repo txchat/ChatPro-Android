@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/packet_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.fzm.widget.CustomTitleBar
+            android:id="@+id/ctb_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/biz_color_primary"
+            app:left_icon="@drawable/biz_ic_back_black"
+            app:right_text="红包记录"
+            app:right_text_color="@color/biz_color_accent"
+            app:right_text_size="16sp"
+            app:title_text="发红包" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/biz_color_primary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp">
+
+                <com.fzm.widget.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/biz_color_primary_dark"
+                    app:sl_radius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingHorizontal="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:text="数字资产"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_selected_token"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawablePadding="10dp"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_arrow_dark"
+                            tools:text="CHAT" />
+                    </RelativeLayout>
+                </com.fzm.widget.ShadowLayout>
+
+                <com.fzm.widget.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/biz_color_primary_dark"
+                    app:sl_radius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingHorizontal="15dp">
+
+                        <ImageView
+                            android:id="@+id/iv_packet_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:paddingEnd="5dp"
+                            android:src="@mipmap/icon_packet_type_lucky" />
+
+                        <TextView
+                            android:id="@+id/tv_amount_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/iv_packet_type"
+                            android:drawablePadding="5dp"
+                            android:text="总数额"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/et_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_toStartOf="@+id/tv_token_name"
+                            android:layout_toEndOf="@+id/tv_amount_tips"
+                            android:background="@null"
+                            android:gravity="end|center_vertical"
+                            android:hint="填入数额"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textColorHint="@color/biz_text_grey_light"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_token_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawablePadding="10dp"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp"
+                            tools:text="CHAT" />
+                    </RelativeLayout>
+                </com.fzm.widget.ShadowLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:paddingHorizontal="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_group_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/biz_text_grey_light"
+                        tools:text="本群共12人" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/biz_color_accent"
+                        tools:text="可用 1234.12CHAT" />
+                </RelativeLayout>
+
+                <com.fzm.widget.ShadowLayout
+                    android:id="@+id/sl_packet_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/biz_color_primary_dark"
+                    app:sl_radius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingHorizontal="15dp">
+
+                        <TextView
+                            android:id="@+id/tv_packet_num_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:drawablePadding="5dp"
+                            android:text="红包个数"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <EditText
+                            android:id="@+id/et_packet_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_toStartOf="@+id/tv_packet_num"
+                            android:layout_toEndOf="@+id/tv_packet_num_tips"
+                            android:background="@null"
+                            android:gravity="end|center_vertical"
+                            android:hint="输入数量"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textColorHint="@color/biz_text_grey_light"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_packet_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:drawablePadding="10dp"
+                            android:text="个"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+                </com.fzm.widget.ShadowLayout>
+
+                <com.fzm.widget.ShadowLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/biz_color_primary_dark"
+                    app:sl_radius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_chain_remark"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="上链备注"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/iv_remark_help"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_chain_remark"
+                                android:layout_alignBottom="@+id/tv_chain_remark"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/tv_chain_remark"
+                                android:src="@drawable/ic_help" />
+
+                            <TextView
+                                android:id="@+id/tv_remark_count"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/tv_chain_remark"
+                                android:layout_alignBottom="@+id/tv_chain_remark"
+                                android:layout_alignParentEnd="true"
+                                android:text="0/20"
+                                android:textColor="@color/biz_text_grey_light" />
+                        </RelativeLayout>
+
+                        <EditText
+                            android:id="@+id/et_remark"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="start"
+                            android:hint="恭喜发财，大吉大利！"
+                            android:maxLength="20"
+                            android:paddingVertical="5dp"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textColorHint="@color/biz_text_grey_light"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </com.fzm.widget.ShadowLayout>
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/specialtext"
+                    android:text="0.0"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/tv_token"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="17sp"
+                    tools:text="CHAT" />
+
+                <TextView
+                    android:id="@+id/send_red_packet"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/bg_round_red_solid_20"
+                    android:gravity="center"
+                    android:text="塞进红包"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:text="未领取的红包，24小时后可申请退回"
+                android:textColor="@color/biz_text_grey_light" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_container"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true" />
+</androidx.drawerlayout.widget.DrawerLayout>

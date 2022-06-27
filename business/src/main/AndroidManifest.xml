@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fzm.chat.biz">
+
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+
+    <application>
+        <activity
+            android:name=".ui.WebContainerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BizTransparent" />
+        <activity
+            android:name=".ui.DeepLinkActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/BizTransparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="3syxin.com"
+                    android:scheme="chatpro" />
+                <data
+                    android:host="chat.33.cn"
+                    android:scheme="chat33pro" />
+            </intent-filter>
+<!--            <intent-filter android:autoVerify="true">-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+<!--                <data-->
+<!--                    android:host="3syxin.com"-->
+<!--                    android:scheme="https" />-->
+
+<!--                <data-->
+<!--                    android:host="www.3syxin.com"-->
+<!--                    android:scheme="https" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <provider
+            android:name=".base.BizFileProvider"
+            android:authorities="${applicationId}.bizfileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

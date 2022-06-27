@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:right_text="@string/biz_delete"
+        app:right_text_color="@color/biz_red_tips"
+        app:title_text="@string/chat_login_add_chat_server_group" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/ctb_title"
+        android:background="@color/biz_color_primary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.fzm.widget.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/biz_color_primary_dark">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_name_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/chat_tips_edit_server_name"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_name_tips"
+                        android:background="@null"
+                        android:hint="@string/chat_hint_edit_server_name"
+                        android:maxLength="15"
+                        android:paddingTop="15dp"
+                        android:singleLine="true"
+                        android:textColorHighlight="@color/biz_text_highlight"
+                        android:textColorHint="@color/biz_text_grey_light"
+                        android:textCursorDrawable="@drawable/ic_cursor_accent"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/biz_color_primary_dark">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_address_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/chat_tips_edit_server_address"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/et_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_address_tips"
+                        android:layout_toStartOf="@+id/iv_history"
+                        android:background="@null"
+                        android:hint="@string/chat_hint_edit_server_address"
+                        android:inputType="textUri"
+                        android:paddingTop="15dp"
+                        android:singleLine="true"
+                        android:textColorHighlight="@color/biz_text_highlight"
+                        android:textColorHint="@color/biz_text_grey_light"
+                        android:textCursorDrawable="@drawable/ic_cursor_accent"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_history"
+                        android:layout_width="35dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:paddingStart="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="10dp"
+                        android:src="@drawable/ic_arrow_down_dark" />
+                </RelativeLayout>
+            </com.fzm.widget.ShadowLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/biz_color_primary"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:background="@drawable/bg_round_accent_solid_20"
+            android:gravity="center"
+            android:text="@string/biz_confirm"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+</RelativeLayout>

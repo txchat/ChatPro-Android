@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        name="download"
+        path="Download/" />
+
+    <files-path
+        name="picture"
+        path="Picture/" />
+
+    <files-path
+        name="video"
+        path="Video/" />
+
+    <external-path
+        name="external"
+        path="." />
+
+    <root-path
+        name="root"
+        path="." />
+</paths>

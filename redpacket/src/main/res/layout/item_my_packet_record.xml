@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp">
+
+    <TextView
+        android:id="@+id/id_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:maxWidth="120dp"
+        android:ellipsize="middle"
+        android:singleLine="true"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="备注/群昵称/昵称/地址" />
+
+    <TextView
+        android:id="@+id/merge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        android:text="拼"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/biz_red_packet_accent"
+        app:layout_constraintLeft_toRightOf="@id/id_user"
+        app:layout_constraintTop_toTopOf="@id/id_user" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/biz_text_grey_light"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_user"
+        tools:text="2021/08/27 12:12" />
+
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/specialtext"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/id_user"
+        tools:text="1.12CHAT" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/withdrawPacket"
+        app:layout_constraintRight_toRightOf="@id/amount"
+        app:layout_constraintTop_toBottomOf="@id/amount"
+        app:layout_goneMarginBottom="15dp"
+        tools:text="已过期 6/23" />
+
+    <TextView
+        android:id="@+id/withdrawPacket"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/red_packet_withdraw_surplus"
+        android:textColor="@color/biz_color_accent"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/biz_color_accent_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@id/amount"
+        app:layout_constraintTop_toBottomOf="@id/status" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

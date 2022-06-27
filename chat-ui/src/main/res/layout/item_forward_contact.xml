@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tag"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="12sp"
+        tools:text="最近聊天" />
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+
+        <CheckBox
+            android:id="@+id/cb_select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:button="@drawable/biz_checkbox"
+            android:visibility="gone" />
+
+        <com.fzm.chat.biz.widget.ChatAvatarView
+            android:id="@+id/iv_avatar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/default_avatar_round"
+            app:iconSize="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.fzm.chat.biz.widget.HighlightTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_group_type"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constrainedWidth="true"
+                    tools:text="刘强" />
+
+                <TextView
+                    android:id="@+id/tv_group_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/shape_blue_r4"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="1dp"
+                    android:textColor="@color/biz_color_accent"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_name"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="部门"
+                    tools:visibility="visible" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.fzm.chat.biz.widget.HighlightTextView
+                android:id="@+id/tv_extra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#ff8a97a5"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="昵称：你的素颜如水"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

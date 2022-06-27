@@ -1,0 +1,46 @@
+rootProject.name = "Chat33Pro"
+include ':app'
+/**-----------------------业务模块-----------------------**/
+// 聊天页面
+include ':chat-ui'
+// 聊天核心业务逻辑
+include ':chat-core'
+// 钱包
+include ':wallet'
+// 红包模块
+include ':redpacket'
+// 企业模块
+include ':chat-oa'
+
+/**-----------------------功能模块-----------------------**/
+// 消息推送模块
+include ':function:lib-push'
+// 实时音视频
+include ':function:rtc'
+// 更新模块
+include ':function:update'
+
+/**-----------------------OSS服务-----------------------**/
+// 阿里云oss服务
+include ':oss:oss-aliyun'
+// 华为云oss服务
+include ':oss:oss-huaweiyun'
+// 复杂美oss服务
+include ':oss:oss-chat'
+
+/**-----------------------基础组件-----------------------**/
+// 公共业务层
+include ':business'
+// 基础控件
+include ':widget'
+// 图片选择库
+include ':lib-picture'
+/**-----------------------可复用SDK-----------------------**/
+// 复杂美oss SDK
+include ':oss-sdk'
+// 连接层
+include ':connection'
+
+/**-----------------------组件通信-----------------------**/
+// 路由
+include ':router'

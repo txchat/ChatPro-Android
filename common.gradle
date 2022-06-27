@@ -1,0 +1,45 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+apply from: versions
+apply from: flavor
+
+kapt {
+    // ARouter
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+        arg("AROUTER_GENERATE_DOC", "enable")
+    }
+}
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion 31
+        vectorDrawables.useSupportLibrary = true
+
+        // Arouter + Java
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+        ndk {
+            abiFilters "armeabi-v7a"/*, "arm64-v8a"*/
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}

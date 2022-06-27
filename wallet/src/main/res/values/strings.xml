@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wallet_remote_note_tips">信息上链，可以在链上查询</string>
+    <string name="wallet_local_note_tips">信息不上链，保存在本地，卸载重装或更换手机后无法查看</string>
+    <string name="wallet_extract_tips">红包账户有余额， 可提取至票券！</string>
+    <string name="wallet_extract_one_key_action">一键提取</string>
+
+    <string name="wallet_title_add_coins">添加票券</string>
+    <string name="wallet_tips_search_coins">搜索票券</string>
+</resources>

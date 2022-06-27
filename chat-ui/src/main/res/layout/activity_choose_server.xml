@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:right_icon="@drawable/icon_home_add"
+        app:title_text="@string/chat_login_choose_server" />
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ctb_title"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        app:tl_indicator_anim_enable="true"
+        app:tl_indicator_color="@color/biz_color_accent_light"
+        app:tl_indicator_corner_radius="18dp"
+        app:tl_indicator_height="36dp"
+        app:tl_indicator_style="BLOCK"
+        app:tl_tab_padding="20dp"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/biz_color_accent"
+        app:tl_textUnselectColor="@color/biz_text_grey_light"
+        app:tl_textsize="16sp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_server"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout" />
+</RelativeLayout>

@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+apply from: common
+apply plugin: 'com.google.protobuf'
+
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas".toString())
+    }
+}
+
+protobuf {
+    //配置protoc编译器
+    protoc {
+        artifact = deps.protoc
+    }
+    //这里配置生成目录，编译后会在build的目录下生成对应的java文件
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.builtins {
+                java {}
+            }
+        }
+    }
+}
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx .test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    sourceSets {
+        // 将数据库schemas文件包含到assets中
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+        androidTest.java.srcDirs += files("$projectDir/src/main/proto".toString())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation deps.arch.core
+    implementation project(':router')
+    api project(':connection')
+    api deps.wallet.go
+//    api project(':module-aar')
+    kapt deps.arouter.compiler
+    implementation files('libs/pinyin4j-2.5.0.jar')
+
+    api deps.room.runtime
+    api deps.room.room_ktx
+    api deps.room.wcdb
+    kapt deps.room.compiler
+    api deps.proto
+    api deps.lifecycle.savedstate
+
+    kapt deps.glide.compiler
+
+    // https://mvnrepository.com/artifact/com.madgag.spongycastle/prov
+    api 'com.madgag.spongycastle:prov:1.58.0.0'
+    api 'org.bitcoinj:bitcoinj-core:0.14.7'
+    // 提供一个空的listenablefuture，防止com.google.guava:listenablefuture与com.google.guava:guava冲突
+    implementation("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+
+}

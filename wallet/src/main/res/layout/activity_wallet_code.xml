@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_wallet_accent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:title_text="二维码收款" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.fzm.widget.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/biz_color_primary"
+                app:sl_radius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="扫二维码向我转账"
+                        android:textColor="@color/biz_text_grey_light" />
+
+                    <ImageView
+                        android:id="@+id/iv_code"
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_marginTop="30dp" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:textColor="@color/biz_text_grey_dark" />
+
+                    <TextView
+                        android:id="@+id/tv_copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="40dp"
+                        android:gravity="center"
+                        android:paddingHorizontal="42.5dp"
+                        android:text="复制地址"
+                        android:textColor="@color/biz_wallet_accent"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:bl_corners_radius="20dp"
+                        app:bl_solid_color="@color/biz_wallet_accent_light" />
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

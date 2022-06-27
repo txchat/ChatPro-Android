@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary_dark"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:title_text="@string/chat_title_setting_center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/chat_tips_app_notify_switch"
+        android:textColor="@color/biz_text_grey_light" />
+
+    <com.fzm.widget.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/chat_tips_new_msg_notify"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="16sp" />
+
+                <com.fzm.widget.SwitchView
+                    android:id="@+id/new_msg"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/biz_color_divider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_tips_rtc_call_notify"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="16sp" />
+
+                    <com.fzm.widget.SwitchView
+                        android:id="@+id/new_call"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.fzm.widget.ShadowLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/chat_tips_system_sound_and_vibrate"
+        android:textColor="@color/biz_text_grey_light" />
+
+    <com.fzm.widget.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_sys_new_msg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/chat_tips_new_msg_sys_notify"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/chat_tips_go_sys_notify_settings"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_set_msg"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/shape_red_r5"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_item_operation_grey" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/biz_color_divider" />
+
+            <LinearLayout
+                android:id="@+id/ll_sys_new_call"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/chat_tips_rtc_call_sys_notify"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/chat_tips_go_sys_notify_settings"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_set_call"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/shape_red_r5"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_item_operation_grey" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.fzm.widget.ShadowLayout>
+</LinearLayout>

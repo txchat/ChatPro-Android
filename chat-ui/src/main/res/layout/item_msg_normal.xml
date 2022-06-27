@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/tv_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="12sp"
+        tools:text="09-06 10:19" />
+
+    <LinearLayout
+        android:id="@+id/ll_row_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp">
+
+        <CheckBox
+            android:id="@+id/cb_select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:button="@drawable/biz_checkbox"
+            android:visibility="gone" />
+
+        <com.fzm.chat.widget.ChatRelativeLayout
+            android:id="@+id/layout_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.fzm.chat.biz.widget.ChatAvatarView
+                android:id="@+id/iv_avatar"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                app:changeAlpha="true"
+                tools:src="@mipmap/default_avatar_round" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/iv_avatar"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:text="群主"
+                        android:textSize="12sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxWidth="200dp"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="12sp"
+                        tools:text="你的素颜如水" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <com.fzm.chat.widget.MsgStateView
+                        android:id="@+id/sent_state"
+                        android:layout_width="31dp"
+                        android:layout_height="26dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp" />
+
+                    <FrameLayout
+                        android:id="@+id/message_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <!--                    <RelativeLayout-->
+                        <!--                        android:id="@+id/text_layout"-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:background="@drawable/img_chat_send">-->
+
+                        <!--                        <com.qmuiteam.qmui.widget.textview.QMUILinkTextView-->
+                        <!--                            android:id="@+id/tv_message"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_gravity="center_vertical"-->
+                        <!--                            android:ellipsize="end"-->
+                        <!--                            android:lineSpacingExtra="2dp"-->
+                        <!--                            android:maxWidth="240dp"-->
+                        <!--                            android:minHeight="40dp"-->
+                        <!--                            android:paddingLeft="15dp"-->
+                        <!--                            android:paddingTop="9dp"-->
+                        <!--                            android:paddingRight="15dp"-->
+                        <!--                            android:paddingBottom="9dp"-->
+                        <!--                            android:textSize="16sp"-->
+                        <!--                            app:qmui_linkBackgroundColor="@color/app_color_link_gray"-->
+                        <!--                            app:qmui_linkTextColor="@color/app_color_link_blue"-->
+                        <!--                            tools:text="这里是文本消息，当对方没 有点击查看时，就一直显示 锁的图标，对方开始倒计时 发送就消失" />-->
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/tv_action"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_below="@+id/tv_message"-->
+                        <!--                            android:layout_alignEnd="@+id/tv_message"-->
+                        <!--                            android:paddingEnd="15dp"-->
+                        <!--                            android:paddingBottom="10dp"-->
+                        <!--                            android:text="@string/chat_fold"-->
+                        <!--                            android:textColor="@color/biz_color_title"-->
+                        <!--                            android:visibility="gone" />-->
+                        <!--                    </RelativeLayout>-->
+                    </FrameLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_forward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="240dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        tools:text="转发：群聊 [这里是群名什什么事没什订单深各位飞么] 的聊天" />
+
+                    <TextView
+                        android:id="@+id/tv_reference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxWidth="240dp"
+                        android:maxLines="2"
+                        android:paddingHorizontal="10dp"
+                        android:paddingVertical="8dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:bl_corners_radius="5dp"
+                        app:bl_solid_color="@color/biz_text_grey_light_bg"
+                        tools:text="群昵称/昵称/地址：多出两行的省略号显示，点击这整个灰色区域显示全部内容…"
+                        tools:visibility="visible" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tv_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/biz_color_accent"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    tools:text="对方已关注"
+                    tools:visibility="visible" />
+            </LinearLayout>
+        </com.fzm.chat.widget.ChatRelativeLayout>
+    </LinearLayout>
+</LinearLayout>

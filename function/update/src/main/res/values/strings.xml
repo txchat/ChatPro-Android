@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="update_downloading">下载中…</string>
+    <string name="update_begin_download">准备下载…</string>
+    <string name="update_download_success">下载完成，点击安装</string>
+    <string name="update_error_request">请求失败，请稍后再试</string>
+
+    <string name="update_notification_channel_name">其他通知</string>
+    <string name="update_notification_channel_name_desc">下载等场景使用的通知类别</string>
+
+</resources>

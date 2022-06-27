@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题色，用于突出文字、按钮-->
+    <color name="biz_color_accent">#32B2F7</color>
+    <!--用于会话气泡-->
+    <color name="biz_color_accent_bubble">#C1E9FF</color>
+    <!--辅助色，用于模块背景、按钮-->
+    <color name="biz_color_accent_light">#EAF6FF</color>
+    <!--辅助色，用于模块背景、按钮-->
+    <color name="biz_color_accent_strong">#0D73AD</color>
+    <!--背景色，用于页面背景、输入框-->
+    <color name="biz_color_primary_dark">#F6F7F8</color>
+    <!--背景色半透明遮罩-->
+    <color name="biz_color_primary_dark_mask">#EFF6F7F8</color>
+    <!--背景色半透明遮罩-->
+    <color name="biz_color_primary_light_mask">#80F6F7F8</color>
+    <!--背景色，用于文字背景-->
+    <color name="biz_color_text_background">#EAECEF</color>
+    <!--背景色，用于页面背景、模块背景、按钮文字-->
+    <color name="biz_color_primary">#FFFFFF</color>
+    <!--用于分割线-->
+    <color name="biz_color_divider">#E6EAEE</color>
+    <!--用于分割线-->
+    <color name="biz_color_blue_divider">#9FCAF5</color>
+    <!--主要文字-->
+    <color name="biz_text_grey_dark">#24374E</color>
+    <!--次要文字，说明文字-->
+    <color name="biz_text_grey_light">#8A97A5</color>
+    <!--次要文字，说明文字，背景-->
+    <color name="biz_text_grey_light_bg">#1A8A97A5</color>
+    <!--次要文字，说明文字(蓝色背景下)-->
+    <color name="biz_text_blue_grey_light">#5B7796</color>
+    <!--提示-->
+    <color name="biz_red_tips">#DD5F5F</color>
+    <!--提示-->
+    <color name="biz_red_tips_pressed">#DF7676</color>
+    <!--提示-->
+    <color name="biz_red_tips_light">#1ADD5F5F</color>
+    <!--提示-->
+    <color name="biz_red_tips_light2">#F2A4A4</color>
+    <!--服务器状态-->
+    <color name="biz_green_tips">#62DEAD</color>
+    <!--服务器状态-->
+    <color name="biz_green_tips_light">#1A62DEAD</color>
+    <color name="biz_orange_tips">#EFA019</color>
+    <color name="biz_orange_tips_light">#1AEFA019</color>
+    <color name="biz_blue_tips_light">#1A32B2F7</color>
+    <!--标题栏字体色-->
+    <color name="biz_color_title">@color/biz_text_grey_dark</color>
+
+    <color name="biz_text_highlight">#82CCF4</color>
+    <color name="biz_color_pressed">#6AC5F6</color>
+    <color name="biz_color_disabled">#c8d3de</color>
+    <color name="biz_color_icon_grey">#D3DFE6</color>
+    <color name="biz_image_grey">#D8D8D8</color>
+    <color name="biz_color_accent_light_press">#D0E6F2</color>
+    <color name="biz_color_bg_grey">#DCDCDC</color>
+
+    <color name="biz_color_progress">#BFEAF6FF</color>
+    <color name="biz_black_mask">#874A4A4A</color>
+    <color name="biz_mute_mask">#CC142E4D</color>
+
+    <color name="biz_wallet_accent">#EBAE44</color>
+    <color name="biz_wallet_accent_light">#FBEED8</color>
+    <color name="biz_wallet_accent_pressed">#EEC071</color>
+
+    <color name="biz_red_packet_accent">#F4C85D</color>
+    <color name="biz_red_packet_accent_light">#808080</color>
+</resources>

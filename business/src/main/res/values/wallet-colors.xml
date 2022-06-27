@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="biz_wallet_coin_bg1">#DCF8FF</color>
+    <color name="biz_wallet_coin_bg2">#FCF0D3</color>
+    <color name="biz_wallet_coin_bg3">#FFE9C2</color>
+    <color name="biz_wallet_coin_bg4">#E1F6E7</color>
+    <color name="biz_wallet_coin_bg5">#FAEEEE</color>
+    <color name="biz_wallet_coin_bg6">#E9ECFB</color>
+
+    <color name="biz_wallet_coin1">#32B2F7</color>
+    <color name="biz_wallet_coin2">#EB9D15</color>
+    <color name="biz_wallet_coin3">#F37530</color>
+    <color name="biz_wallet_coin4">#35CD8A</color>
+    <color name="biz_wallet_coin5">#EA6B6B</color>
+    <color name="biz_wallet_coin6">#667BEC</color>
+</resources>

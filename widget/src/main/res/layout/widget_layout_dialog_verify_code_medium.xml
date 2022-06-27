@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/widget_common_dialog_color"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/widget_input_phone_code"
+            android:textColor="@color/widget_text_color" />
+
+        <ImageView
+            android:id="@+id/ic_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/widget_ic_close" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/code_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="@color/widget_text_color" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.fzm.widget.verify.VerifyCodeView
+            android:id="@+id/verify_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:code_bg="flat"
+            app:input_count="5" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/send_code"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="@string/widget_send_code"
+        android:textColor="@color/widget_color_primary" />
+
+    <TextView
+        android:id="@+id/bottom_tips"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/widget_send_code_success_tip"
+        android:textColor="@color/widget_text_color_grey"
+        android:visibility="invisible" />
+</LinearLayout>

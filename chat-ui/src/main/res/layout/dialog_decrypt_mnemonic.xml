@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:bl_corners_radius="10dp"
+    app:bl_solid_color="@color/biz_color_primary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_close_dialog" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/chat_input_chat_password"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <com.fzm.widget.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/biz_color_primary_dark">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/chat_encrypt_password_hint"
+            android:inputType="textPassword"
+            android:lineSpacingExtra="4dp"
+            android:maxLength="16"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textColorHighlight="@color/biz_text_highlight"
+            android:textCursorDrawable="@drawable/ic_cursor_accent"
+            android:textSize="14sp" />
+    </com.fzm.widget.ShadowLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bg_round_accent_solid_20">
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="@string/biz_confirm"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp">
+
+        <TextView
+            android:id="@+id/tv_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="忘记密码"
+            android:textColor="@color/biz_color_accent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+</LinearLayout>

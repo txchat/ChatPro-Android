@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary_dark"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:right_icon="@mipmap/icon_qrcode"
+        app:title_text="@string/chat_title_group_info" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <com.fzm.chat.biz.widget.ChatAvatarView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/default_avatar_room"
+                    android:transitionName="shareImage"
+                    app:iconSize="15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:maxLength="20"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="17sp"
+                        tools:text="你的素颜如水" />
+
+                    <TextView
+                        android:id="@+id/tv_mark_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp"
+                        tools:text="Add：1234" />
+
+                    <TextView
+                        android:id="@+id/tv_pub_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        tools:text="公开群名：嘻嘻哈哈"
+                        tools:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_identification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        tools:text="认证信息：资深数字货币玩家"
+                        tools:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_group_members"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                app:sl_radius="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_see_member"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_tips_group_members"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_member_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/biz_text_grey_light"
+                            android:textSize="14sp"
+                            tools:text="共2人" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_member"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:overScrollMode="never" />
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_group_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                app:sl_radius="5dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_group_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/chat_tips_nickname_in_group"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="end"
+                        android:singleLine="true"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp"
+                        tools:text="群昵称" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_item_operation_grey" />
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_group_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                app:sl_radius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_chat_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_history"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_log_in_chat_history"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider"
+                        tools:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_files"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_files"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_file_in_chat_history"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider"
+                        tools:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_no_disturb"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_no_disturb"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_detail_no_disturb"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <com.fzm.widget.SwitchView
+                            android:id="@+id/sv_no_disturb"
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_stick_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_stick_top"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_detail_stick_top"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <com.fzm.widget.SwitchView
+                            android:id="@+id/sv_stick_top"
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_server_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                app:sl_radius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_group_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_detail_group_type_tips"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_group_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:drawablePadding="5dp"
+                            android:gravity="end"
+                            android:textColor="@color/biz_text_grey_light"
+                            android:textSize="14sp"
+                            tools:text="普通群" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_server_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_detail_belong_server_group2"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="end"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_server_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="5dp"
+                                android:ellipsize="end"
+                                android:maxWidth="200dp"
+                                android:maxLines="1"
+                                android:textColor="@color/biz_text_grey_light"
+                                android:textSize="14sp"
+                                tools:text="官方" />
+
+                            <TextView
+                                android:id="@+id/tv_server_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxWidth="200dp"
+                                android:maxLines="1"
+                                android:textColor="@color/biz_text_grey_light"
+                                android:textSize="14sp"
+                                tools:text="http://172.16.100.92" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/sl_group_management"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="15dp"
+                app:sl_radius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_only_owner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_admin"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            tools:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/tv_admin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_weight="1"
+                                android:text="@string/chat_group_admin_setting"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_admin_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/biz_text_grey_light"
+                                tools:text="共3人" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:src="@drawable/ic_item_operation_grey" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/biz_color_divider"
+                            tools:visibility="visible" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_owner"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            tools:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/tv_owner_tips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:text="@string/chat_group_owner_setting"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_owner"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:gravity="end"
+                                android:singleLine="true"
+                                android:textColor="@color/biz_text_grey_light"
+                                tools:text="群主昵称" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:src="@drawable/ic_item_operation_grey" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/biz_color_divider"
+                            tools:visibility="visible" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_join_limit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_group_join_limit"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_join_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/biz_text_grey_light"
+                            tools:text="无需审批" />
+
+                        <ImageView
+                            android:id="@+id/iv_join_limit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_add_limit"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_group_add_limit"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_add_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/biz_text_grey_light"
+                            tools:text="可加好友" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_mute_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_mute_all"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_group_mute_all"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <com.fzm.widget.SwitchView
+                            android:id="@+id/sv_mute_all"
+                            android:layout_width="60dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/biz_color_divider" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_mute_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_weight="1"
+                            android:text="@string/chat_group_mute_list"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_mute_list"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/biz_text_grey_light"
+                            tools:text="3名成员禁言" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:src="@drawable/ic_item_operation_grey" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/exit_group"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:visibility="gone"
+                app:sl_radius="20dp"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/chat_action_exit_group"
+                    android:textColor="@color/biz_red_tips"
+                    android:textSize="16sp" />
+            </com.fzm.widget.ShadowLayout>
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/disband_group"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="15dp"
+                android:visibility="gone"
+                app:sl_radius="20dp"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/chat_action_disband_group"
+                    android:textColor="@color/biz_red_tips"
+                    android:textSize="16sp" />
+            </com.fzm.widget.ShadowLayout>
+
+            <TextView
+                android:id="@+id/tv_team_group_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="20dp"
+                android:text="全员群/部门群只能通过退出组织/部门才能退出群聊，退出组织/部门将自动退出对应群！"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

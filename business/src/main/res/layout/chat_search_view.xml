@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:clickable="true"
+    android:paddingHorizontal="15dp"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_toStartOf="@+id/tv_cancel"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:bl_corners_radius="20dp"
+        app:bl_solid_color="@color/biz_color_primary_dark">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:transitionName="searchIcon"
+            app:srcCompat="@drawable/ic_search_grey" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textColorHint="@color/biz_text_grey_light"
+            android:textCursorDrawable="@drawable/ic_cursor_accent"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/biz_sl_btn"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/biz_cancel"
+        android:textColor="@color/biz_color_accent"
+        android:textSize="16sp" />
+</RelativeLayout>

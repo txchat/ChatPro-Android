@@ -1,0 +1,254 @@
+ext.deps = [:]
+
+/**
+ * chat33pro版本号
+ */
+ext.version_code = 29
+ext.version_name = "1.17.1"
+
+/**
+ * Orginone（奥集能）版本号
+ */
+ext.assets_version_code = 2
+ext.assets_version_name = "1.0.1"
+
+/**
+ * 谈信公安版版本号
+ */
+ext.police_version_code = 6
+ext.police_version_name = "1.13.0"
+
+/**
+ * ZH-CHAT版本号
+ */
+ext.zhchat_version_code = 4
+ext.zhchat_version_name = "1.16.5"
+
+def deps = [:]
+def versions = [:]
+versions.android_gradle_plugin = '7.0.3'
+versions.protobuf_gradle_plugin = '0.8.18'
+versions.arch = "1.0.19"
+versions.wallet = "f9024894b9"
+versions.wallet_go = "1.0.7@aar"
+
+versions.kotlin = "1.5.31"
+versions.coroutines = "1.5.2"
+
+versions.material = "1.3.0"
+versions.cardview = "1.0.0"
+
+//Jetpack
+versions.constraint_layout = "2.1.2"
+versions.appcompat = "1.4.0"
+versions.core = "1.7.0"
+versions.browser = "1.4.0"
+versions.fragment = "1.4.0"
+versions.activity = "1.4.0"
+versions.annotation = "1.3.0"
+versions.recyclerview = "1.2.1"
+versions.documentfile = "1.0.1"
+versions.viewpager2 = "1.0.0"
+versions.lifecycle = "2.4.0"
+versions.navigation = "2.3.5"
+versions.room = "2.3.0"
+versions.work = "2.5.0"
+versions.compose = "1.1.0-beta03"
+
+versions.wcdb = "1.0.8"
+versions.koin = "2.2.0-alpha-1"
+versions.glide = "4.11.0"
+versions.arouter = "1.4.0"
+versions.arouterc = "1.2.1"
+versions.okhttp = "3.9.0"
+versions.retrofit = "2.6.0"
+versions.gson = "2.8.6"
+versions.brvah = "3.0.4"
+versions.moshi = "1.9.3"
+versions.mmkv = "1.2.1"
+versions.mars = "1.2.3"
+versions.proto = "3.19.1"
+versions.permissionx = "1.4.0"
+versions.dsbridge = "3.0-SNAPSHOT"
+versions.background = "1.6.5"
+versions.retrofit_url = "1.4.0"
+versions.flyco = "2.1.2@aar"
+versions.flexbox = "2.0.1"
+versions.zxing_lite = "1.1.9-androidx"
+versions.leak_canary = "2.7"
+versions.kluban = "1.0.5"
+versions.db_glance = "1.1.0"
+deps.versions = versions
+
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.target_sdk = 31
+build_versions.compile_sdk = 31
+ext.build_versions = build_versions
+
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+deps.protobuf_gradle_plugin = "com.google.protobuf:protobuf-gradle-plugin:$versions.protobuf_gradle_plugin"
+
+def arch = [:]
+arch.core = "com.github.ZJYZJY.arch:arch:$versions.arch"
+deps.arch = arch
+
+def wallet = [:]
+wallet.sdk = "com.github.bityuan.Wallet-Android:sdk:$versions.wallet"
+wallet.go = "com.github.bityuan:WalletApi-Android:$versions.wallet_go"
+deps.wallet = wallet
+
+def material = [:]
+material.design = "com.google.android.material:material:$versions.material"
+deps.material = material
+
+def androidx = [:]
+androidx.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+androidx.core = "androidx.core:core:$versions.core"
+androidx.core_ktx = "androidx.core:core-ktx:$versions.core"
+androidx.activity = "androidx.activity:activity:$versions.activity"
+androidx.activity_ktx = "androidx.activity:activity-ktx:$versions.activity"
+androidx.browser = "androidx.browser:browser:$versions.browser"
+androidx.fragment = "androidx.fragment:fragment:$versions.fragment"
+androidx.fragment_ktx = "androidx.fragment:fragment-ktx:$versions.fragment"
+androidx.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+androidx.cardview = "androidx.cardview:cardview:$versions.cardview"
+androidx.annotation = "androidx.annotation:annotation:$versions.annotation"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+androidx.documentfile = "androidx.documentfile:documentfile:$versions.documentfile"
+androidx.viewpager2 = "androidx.viewpager2:viewpager2:$versions.viewpager2"
+deps.androidx = androidx
+
+/**
+ * Kotlin依赖
+ */
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
+kotlin.coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines"
+kotlin.coroutines_android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+deps.kotlin = kotlin
+
+/**
+ * JetPack依赖组件
+ */
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.room_ktx = "androidx.room:room-ktx:$versions.room"
+room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
+room.testing = "androidx.room:room-testing:$versions.room"
+room.wcdb = "com.tencent.wcdb:room:$versions.wcdb"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.runtime_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+lifecycle.savedstate = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.lifecycle"
+lifecycle.compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def compose = [:]
+compose.ui = "androidx.compose.ui:ui:$versions.compose"
+compose.preview = "androidx.compose.ui:ui-tooling-preview:$versions.compose"
+compose.compiler = "androidx.compose.compiler:compiler:$versions.compose"
+compose.material = "androidx.compose.material:material:$versions.compose"
+deps.compose = compose
+
+def work = [:]
+work.runtime = "androidx.work:work-runtime:$versions.work"
+work.runtime_ktx = "androidx.work:work-runtime-ktx:$versions.work"
+deps.work = work
+
+def navigation = [:]
+navigation.runtime = "androidx.navigation:navigation-runtime:$versions.navigation"
+navigation.runtime_ktx = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+navigation.fragment = "androidx.navigation:navigation-fragment:$versions.navigation"
+navigation.fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.ui = "androidx.navigation:navigation-ui:$versions.navigation"
+navigation.ui_ktx = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+navigation.safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+deps.navigation = navigation
+
+/**
+ * 第三方依赖
+ */
+// kotlin依赖注入
+def koin = [:]
+koin.core = "org.koin:koin-core:$versions.koin"
+koin.core_ext = "org.koin:koin-core-ext:$versions.koin"
+koin.android = "org.koin:koin-android:$versions.koin"
+koin.android_scope = "org.koin:koin-androidx-scope:$versions.koin"
+koin.android_viewmodel = "org.koin:koin-androidx-viewmodel:$versions.koin"
+koin.android_fragment = "org.koin:koin-androidx-fragment:$versions.koin"
+koin.android_ext = "org.koin:koin-androidx-ext:$versions.koin"
+koin.plugin = "org.koin:koin-gradle-plugin:$versions.koin"
+deps.koin = koin
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+deps.retrofit = retrofit
+
+def okhttp = [:]
+okhttp.okhttp3 = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+def arouter = [:]
+arouter.api = "com.alibaba:arouter-api:$versions.arouter"
+arouter.compiler = "com.alibaba:arouter-compiler:$versions.arouterc"
+deps.arouter = arouter
+
+// 多功能RecyclerView的Adapter
+deps.brvah = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.brvah"
+// json转换
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+deps.moshi = "com.squareup.moshi:moshi:$versions.moshi"
+deps.moshi_kotlin = "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+deps.moshi_codegen = "com.squareup.moshi:moshi-kotlin-codegen:$versions.moshi"
+// 键值对存储
+deps.mmkv = "com.tencent:mmkv-static:$versions.mmkv"
+// 如果项目中使用了libc++_shared.so则使用这个依赖
+deps.mmkv_lite = "com.tencent:mmkv:$versions.mmkv"
+// 腾讯Mars
+def mars = [:]
+mars.core = "com.tencent.mars:mars-core:$versions.mars"
+mars.xlog = "com.tencent.mars:mars-xlog:$versions.mars"
+deps.mars = mars
+// ProtoBuf
+deps.proto = "com.google.protobuf:protobuf-java:$versions.proto"
+deps.protoc = "com.google.protobuf:protoc:$versions.proto"
+// 动态权限请求库
+deps.permissionx = "com.permissionx.guolindev:permissionx:$versions.permissionx"
+// WebView
+deps.dsbridge = "com.github.wendux:DSBridge-Android:$versions.dsbridge"
+// Shape Drawable框架
+deps.background = "com.noober.background:core:$versions.background"
+// retrofit动态域名切换框架
+deps.retrofit_url = "me.jessyan:retrofit-url-manager:$versions.retrofit_url"
+// 自定义TabLayout
+deps.flyco = "com.flyco.tablayout:FlycoTabLayout_Lib:$versions.flyco"
+// FlexBox
+deps.flexbox = "com.google.android:flexbox:$versions.flexbox"
+// 集成Zxing的二维码库
+deps.zxing_lite = "com.king.zxing:zxing-lite:$versions.zxing_lite"
+// LeakCanary内存泄漏检测
+deps.leak_canary = "com.squareup.leakcanary:leakcanary-android:$versions.leak_canary"
+// KLuban，改进版Luban压缩
+deps.kluban = "com.github.forJrking:KLuban:$versions.kluban"
+// 数据库查看插件
+deps.db_glance = "com.guolindev.glance:glance:$versions.db_glance"
+
+
+
+ext.deps = deps

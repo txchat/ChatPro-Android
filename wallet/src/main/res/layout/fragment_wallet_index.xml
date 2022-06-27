@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary_dark"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            app:bl_corners_bottomLeftRadius="30dp"
+            app:bl_corners_bottomRightRadius="30dp"
+            app:bl_solid_color="@color/biz_wallet_accent">
+
+            <com.fzm.widget.CustomTitleBar
+                android:id="@+id/ctb_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:left_icon="@drawable/biz_ic_back_dark"
+                app:right_icon="@drawable/ic_wallet_scan"
+                app:title_text="我的票券" />
+
+            <RelativeLayout
+                android:id="@+id/extractLayout"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:visibility="gone"
+                app:bl_corners_radius="6dp"
+                app:bl_solid_color="@color/biz_wallet_coin_bg2">
+
+                <TextView
+                    android:id="@+id/tv_extract_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="15dp"
+                    android:maxWidth="128dp"
+                    android:text="@string/wallet_extract_tips"
+                    android:textColor="@color/biz_text_grey_dark"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/extractBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="@string/wallet_extract_one_key_action"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:bl_corners_radius="15dp"
+                    app:bl_solid_color="@color/biz_wallet_accent" />
+
+            </RelativeLayout>
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                app:tl_indicator_height="0dp"
+                app:tl_indicator_width="0dp"
+                app:tl_tab_padding="15dp"
+                app:tl_textBold="SELECT"
+                app:tl_textSelectColor="@color/biz_text_grey_dark"
+                app:tl_textUnselectColor="#8024374E"
+                app:tl_textsize="16sp" />
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_assets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-30dp" />
+    </LinearLayout>
+
+    <com.fzm.widget.ShadowLayout
+        android:id="@+id/fab_add_coins"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/biz_wallet_accent_light"
+        app:layout_anchor="@id/ll_content"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_behavior="com.fzm.widget.fab.FloatingScrollBehavior"
+        app:sl_radius="25dp"
+        app:sl_shadow_alpha="0.4"
+        app:sl_shadow_color="@color/biz_text_grey_dark"
+        app:sl_shadow_elevation="4dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_wallet_add_accent" />
+    </com.fzm.widget.ShadowLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

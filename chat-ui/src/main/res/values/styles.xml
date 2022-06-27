@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 设置弹出窗口的属性，frame叠加，isfloat是否浮动，tarnslucent是否半透明，dim是背景是否变暗 -->
+    <style name="Theme_audioDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="HeaderTextStyle">
+        <item name="android:textColor">@color/biz_text_grey_dark</item>
+    </style>
+    <style name="HeaderTextStyle.Copy" parent="HeaderTextStyle">
+        <item name="drawableEndCompat">@drawable/ic_copy_dark</item>
+    </style>
+
+    <style name="update_progressbar_horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+    </style>
+
+    <style name="chat.picture.style" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--标题栏背景色-->
+        <item name="colorPrimary">@color/biz_color_primary</item>
+        <!--状态栏背景色-->
+        <item name="colorPrimaryDark">@color/biz_color_primary</item>
+        <!--是否改变图片列表界面状态栏字体颜色为黑色-->
+        <item name="picture.statusFontColor">true</item>
+        <!--返回键图标-->
+        <item name="picture.leftBack.icon">@drawable/biz_ic_back_dark</item>
+        <!--标题下拉箭头-->
+        <item name="picture.arrow_down.icon">@drawable/ic_arrow_down_dark</item>
+        <!--标题上拉箭头-->
+        <item name="picture.arrow_up.icon">@drawable/ic_arrow_up_dark</item>
+        <!--标题文字颜色-->
+        <item name="picture.title.textColor">@color/biz_color_title</item>
+        <!--标题栏右边文字-->
+        <item name="picture.right.textColor">@color/biz_color_accent</item>
+        <!--图片列表勾选样式-->
+        <item name="picture.checked.style">@drawable/app_checkbox_num_selector</item>
+        <!--开启图片列表勾选数字模式-->
+        <item name="picture.style.checkNumMode">true</item>
+        <!--选择图片样式0/9-->
+        <item name="picture.style.numComplete">false</item>
+        <!--图片列表底部背景色-->
+        <item name="picture.bottom.bg">@color/biz_color_primary</item>
+        <!-- 发送按钮背景 -->
+        <item name="picture.send.button.bg">@drawable/bg_send_picture_btn</item>
+        <!--图片列表预览文字颜色-->
+        <item name="picture.preview.textColor">@color/app_text_state_color</item>
+        <!--图片列表已完成文字颜色-->
+        <item name="picture.complete.textColor">@color/app_text_state_color</item>
+        <!--图片已选数量圆点背景色-->
+        <item name="picture.num.style">@drawable/num_oval</item>
+        <!--预览界面标题文字颜色-->
+        <item name="picture.ac_preview.title.textColor">@color/biz_color_title</item>
+        <!--预览界面已完成文字颜色-->
+        <item name="picture.ac_preview.complete.textColor">@color/app_text_state_color</item>
+        <!--预览界面标题栏背景色-->
+        <item name="picture.ac_preview.title.bg">@color/biz_color_primary</item>
+        <!--预览界面底部背景色-->
+        <item name="picture.ac_preview.bottom.bg">@color/biz_color_primary</item>
+        <!--预览界面返回箭头-->
+        <item name="picture.preview.leftBack.icon">@drawable/biz_ic_back</item>
+        <!--裁剪页面标题背景色-->
+        <item name="picture.crop.toolbar.bg">@color/biz_color_primary</item>
+        <!--裁剪页面状态栏颜色-->
+        <item name="picture.crop.status.color">@color/biz_color_primary</item>
+        <!--裁剪页面标题文字颜色-->
+        <item name="picture.crop.title.color">@color/biz_color_title</item>
+        <!--相册文件夹列表选中图标-->
+        <item name="picture.folder_checked_dot">@drawable/blue_oval</item>
+        <!--原图勾选样式-->
+        <item name="picture.original.check.style">@drawable/picture_ic_checkbox</item>
+        <!--原图字体颜色-->
+        <item name="picture.original.text.color">@color/biz_text_grey_light</item>
+        <!--相册目录文件夹字体颜色-->
+        <item name="picture.folder.textColor">@color/biz_text_grey_dark</item>
+        <!--相册目录文件夹字体大小-->
+        <item name="picture.folder.textSize">16sp</item>
+        <!--相册背景底色-->
+        <item name="picture.container.backgroundColor">@color/biz_color_primary</item>
+        <!--标题栏高度-->
+        <item name="picture.titleBar.height">50dp</item>
+    </style>
+</resources>

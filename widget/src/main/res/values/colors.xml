@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="widget_color_primary">#32B2F7</color>
+    <color name="widget_divider">#DDDEE3</color>
+    <color name="widget_text_color">#24374E</color>
+    <color name="widget_text_color_light">#8A97A5</color>
+    <color name="widget_text_color_grey">#24374E</color>
+    <color name="widget_background">#FFFFFF</color>
+
+    <color name="widget_transparent">#00000000</color>
+    <color name="widget_title_color_text">@color/widget_text_color_grey</color>
+</resources>

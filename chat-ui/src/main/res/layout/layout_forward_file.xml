@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="240dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:bl_corners_radius="5dp"
+    app:bl_solid_color="@color/biz_color_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp">
+
+        <FrameLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/iv_file_type"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                tools:src="@mipmap/icon_chat_snap" />
+
+            <com.qmuiteam.qmui.widget.QMUIProgressBar
+                android:id="@+id/pb_file"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:qmui_background_color="@android:color/transparent"
+                app:qmui_max_value="100"
+                app:qmui_progress_color="@color/biz_color_progress"
+                app:qmui_stroke_width="15dp"
+                app:qmui_type="type_circle" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textSize="16sp"
+            tools:text="这是文件名什么什么什么什么什么什么什么什么.xlsx" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/biz_color_divider" />
+
+    <TextView
+        android:id="@+id/tv_file_size"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="13dp"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="12sp"
+        tools:text="文件 149KB" />
+</LinearLayout>

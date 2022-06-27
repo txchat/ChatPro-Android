@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:text="@string/biz_cancel"
+            android:textColor="@color/biz_color_accent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/chat_title_contact_select"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textSize="17sp" />
+
+        <com.fzm.chat.biz.widget.ChatSearchView
+            android:id="@+id/chat_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="@color/biz_color_primary"
+            android:visibility="gone"
+            app:hint="@string/chat_tips_search_contact" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_contact_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:bl_corners_radius="20dp"
+        app:bl_solid_color="@color/biz_color_primary_dark"
+        tools:ignore="MissingPrefix">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:transitionName="searchIcon"
+            app:srcCompat="@drawable/ic_search_grey" />
+
+        <TextView
+            android:id="@+id/tv_search_tips"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/chat_tips_search_contact"
+            android:textColorHint="@color/biz_text_grey_light"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

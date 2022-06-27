@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fzm.chat">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.OPENABLE" />
+        </intent>
+    </queries>
+
+    <application>
+
+        <activity
+            android:name=".login.ChooseLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.ChooseServerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.EditServerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.words.CreateMnemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.words.BackupMnemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.words.ImportAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.ImportLocalAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".security.SecuritySettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".security.EncryptPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".security.BindAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.ContactInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.AddFriendActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Chat33Pro.TransBackground" />
+        <activity
+            android:name=".contact.ServerManagementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.EditServerGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.ChooseServerGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".conversation.ChatActivity"
+            android:configChanges="screenSize|uiMode|fontScale|orientation|keyboardHidden|locale|colorMode"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".conversation.ForwardListActivity"
+            android:configChanges="screenSize|uiMode|fontScale|orientation|keyboardHidden|locale|colorMode"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".setting.SettingCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".search.SearchLocalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".search.SearchLocalScopedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".media.FileManagementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".media.SearchFileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.GroupInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.GroupQRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.JoinGroupInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.CreateInviteGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.GroupUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.RemoveGroupUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.EditGroupNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.EditGroupAvatarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.MuteListActivity"
+            android:configChanges="screenSize|uiMode|fontScale|orientation|keyboardHidden|locale|colorMode"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".group.AdminListActivity"
+            android:configChanges="screenSize|uiMode|fontScale|orientation|keyboardHidden|locale|colorMode"
+            android:screenOrientation="portrait" />
+        <activity android:name=".group.SetAdminActivity" />
+        <!--        <activity-->
+        <!--            android:name=".conversation.BubbleChatActivity"-->
+        <!--            android:allowEmbedded="true"-->
+        <!--            android:documentLaunchMode="always"-->
+        <!--            android:excludeFromRecents="true"-->
+        <!--            android:launchMode="standard"-->
+        <!--            android:resizeableActivity="true" />-->
+        <activity
+            android:name=".ui.SearchOnlineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.SearchUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.QRScanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.QRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.EditInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.BlockListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MediaGalleryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen.Gallery">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name=".ui.EditUserRemarkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.FileDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.EditAvatarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".account.EndPointLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/BizTransparent" />
+        <activity
+            android:name=".ui.LargeTextActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreen">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
+        </activity>
+        <activity
+            android:name=".ui.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.ContactSelectActivity" />
+        <activity
+            android:name=".ui.SystemShareActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/biz_title_system_share"
+            android:screenOrientation="portrait"
+            android:theme="@style/BizTransparent">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

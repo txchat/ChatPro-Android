@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/choose_server"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="13dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_select_server" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/chat_login_choose_server"
+            android:textColor="@color/biz_color_accent" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="234dp"
+        android:layout_height="204dp"
+        android:layout_below="@+id/choose_server"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/bg_choose_login" />
+
+    <LinearLayout
+        android:id="@+id/login_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_user_protocol"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/login_words"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@mipmap/bg_login_words">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/chat_login_type_words"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_create"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:paddingStart="11dp"
+                android:paddingEnd="11dp"
+                android:text="@string/chat_login_create_account"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="15sp"
+                app:bl_corners_radius="18dp"
+                app:bl_solid_color="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_import"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="29dp"
+                android:gravity="center"
+                android:paddingStart="11dp"
+                android:paddingEnd="11dp"
+                android:text="@string/chat_login_import_account"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:bl_corners_radius="18dp"
+                app:bl_solid_color="@color/biz_color_accent"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_create"
+                app:layout_constraintStart_toEndOf="@+id/tv_create"
+                app:layout_constraintTop_toTopOf="@+id/tv_create" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.fzm.widget.ShadowLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/biz_color_accent"
+            app:sl_radius="12dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/login_account"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@mipmap/bg_login_account">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/chat_login_type_account"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/ll_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="18.5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_login_find_mnem_words"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_round_arrow_right" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.fzm.widget.ShadowLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_user_protocol"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/cb_agree"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:button="@drawable/biz_checkbox"
+            android:checked="false"
+            android:padding="15dp" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/biz_text_grey_light"
+            android:textSize="13sp"
+            tools:text="@string/chat_login_tips_agreement" />
+    </LinearLayout>
+</RelativeLayout>

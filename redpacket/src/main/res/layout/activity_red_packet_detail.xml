@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/biz_red_tips"
+        app:left_icon="@drawable/biz_ic_back_white"
+        app:right_text="红包记录"
+        app:right_text_color="#FFDF5F"
+        app:right_text_size="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/biz_red_tips"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp">
+
+        <com.fzm.chat.biz.widget.ChatAvatarView
+            android:id="@+id/iv_avatar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/default_avatar_round" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9.5dp"
+            android:drawablePadding="5dp"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:drawableEnd="@mipmap/icon_packet_type_luck2"
+            tools:text="丹丹图标跟在后面只有的ABC红包" />
+
+        <TextView
+            android:id="@+id/tv_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="#B0FFFFFF"
+            tools:text="恭喜发财，大吉大利！" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/specialtext"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            tools:text="1.23CHAT" />
+
+        <TextView
+            android:id="@+id/tv_go_asset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6.5dp"
+            android:paddingVertical="3dp"
+            android:text="已存入钱包，可转账"
+            android:textColor="#B0FFFFFF"
+            android:visibility="gone"
+            app:drawableEndCompat="@drawable/ic_packet_arrow"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_receive_info_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/tv_receive_count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/biz_text_grey_light" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_receive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_packet_receive_record" />
+</LinearLayout>

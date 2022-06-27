@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ChatAvatarView">
+        <attr name="iconSize" format="dimension" />
+        <attr name="iconSrc" format="reference" />
+        <attr name="changeAlpha" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ChatSearchView">
+        <attr name="hint" format="string|reference" />
+        <attr name="maxWords" format="integer" />
+        <attr name="searchDelay" format="integer" />
+        <attr name="showCancel" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="HighlightTextView">
+        <attr name="highlightColor" format="color" />
+    </declare-styleable>
+</resources>

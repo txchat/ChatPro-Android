@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">谈信</string>
+    <string name="biz_title_system_share">分享到谈信</string>
+
+    <string name="biz_text_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="biz_tips_empty_tab_page">找不到这个页面了~</string>
+    <string name="biz_tips_empty_feature_page">功能正在开发中~</string>
+
+    <string name="biz_permission_not_granted">权限未授予</string>
+    <string name="biz_need_permission_to_use">需要授予下列权限后才能继续使用</string>
+    <string name="biz_open_setting_to_grant_permission">前往设置打开下列权限后才能继续使用</string>
+    <string name="biz_tips">提示</string>
+    <string name="biz_save">保存</string>
+    <string name="biz_acknowledge">知道了</string>
+    <string name="biz_confirm">确定</string>
+    <string name="biz_cancel">取消</string>
+    <string name="biz_copy">复制</string>
+    <string name="biz_delete">删除</string>
+    <string name="biz_skip">跳过</string>
+
+    <string name="biz_layout_list_empty">暂无数据</string>
+    <string name="biz_layout_error_service">服务器了些问题，请稍后重试！</string>
+    <string name="biz_layout_error_network">请检查您的网络连接，点击重试</string>
+    <string name="biz_layout_data_loading">加载中…</string>
+    <string name="biz_logout_message">确定要退出登录吗？</string>
+
+    <string name="biz_tips_search_friends">输入用户账户、手机号</string>
+    <string name="biz_search_list_empty">没有匹配的对象</string>
+
+    <string name="biz_tips_qr_unrecongnize">无法处理结果，已复制到剪贴板</string>
+    <string name="biz_tips_shared_fail">资源分享失败</string>
+    <string name="biz_tips_resource_fail">资源获取失败</string>
+    <string name="biz_tips_send_empty_file_error">不能发送空文件</string>
+</resources>

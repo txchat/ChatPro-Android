@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="290dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="时间"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp">
+
+                <com.pl.wheelview.WheelView
+                    android:id="@+id/wv_year"
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    app:itemNumber="5"
+                    app:lineColor="@color/biz_color_primary_dark"
+                    app:lineHeight="30dp"
+                    app:maskDarkColor="#32FFFFFF"
+                    app:maskLightColor="#32FFFFFF"
+                    app:normalTextColor="@color/biz_text_grey_light"
+                    app:normalTextSize="14sp"
+                    app:selectedTextColor="@color/biz_text_grey_dark"
+                    app:selectedTextSize="18sp" />
+
+                <com.pl.wheelview.WheelView
+                    android:id="@+id/wv_month"
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_weight="1"
+                    app:itemNumber="5"
+                    app:lineColor="@color/biz_color_primary_dark"
+                    app:lineHeight="30dp"
+                    app:maskDarkColor="#32FFFFFF"
+                    app:maskLightColor="#32FFFFFF"
+                    app:normalTextColor="@color/biz_text_grey_light"
+                    app:normalTextSize="14sp"
+                    app:selectedTextColor="@color/biz_text_grey_dark"
+                    app:selectedTextSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_coin_show"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="币种"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_coin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_coin_filter" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/reset"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="重置"
+            android:textColor="@color/biz_red_tips"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:bl_corners_radius="5dp"
+            app:bl_stroke_color="@color/biz_red_tips"
+            app:bl_stroke_width="1dp" />
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/biz_red_tips" />
+    </LinearLayout>
+</RelativeLayout>

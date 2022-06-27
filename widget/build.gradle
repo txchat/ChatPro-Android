@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply from: common
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    api 'com.qmuiteam:qmui:1.4.4'
+
+    implementation deps.kotlin.stdlib
+    implementation deps.androidx.core_ktx
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.recyclerview
+    implementation deps.androidx.constraint_layout
+    implementation deps.lifecycle.runtime_ktx
+    implementation deps.permissionx
+}

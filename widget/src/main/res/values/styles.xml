@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="widget_popup_dropdown" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/widget_popup_dropdown_show</item>
+        <item name="android:windowExitAnimation">@anim/widget_popup_dropdown_hide</item>
+    </style>
+
+    <style name="widget_popup_translate" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/widget_popup_dropdown_translate_show</item>
+        <item name="android:windowExitAnimation">@anim/widget_popup_dropdown_translate_hide</item>
+    </style>
+</resources>

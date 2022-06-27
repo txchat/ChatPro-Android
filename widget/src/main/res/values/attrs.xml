@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义顶部标题栏-->
+    <declare-styleable name="CustomTitleBar">
+        <attr name="left_icon" format="reference" />
+        <attr name="left_icon_width" format="dimension" />
+        <attr name="left_icon_height" format="dimension" />
+
+        <attr name="left_text" format="string|reference" />
+        <attr name="left_text_color" format="color|reference" />
+        <attr name="left_text_size" format="dimension|reference" />
+
+        <attr name="title_text" format="string|reference" />
+        <attr name="title_text_color" format="color|reference" />
+        <attr name="title_text_size" format="dimension|reference" />
+
+        <attr name="right_icon" format="reference" />
+        <attr name="right_icon_width" format="dimension" />
+        <attr name="right_icon_height" format="dimension" />
+
+        <attr name="right_text" format="string|reference" />
+        <attr name="right_text_color" format="color|reference" />
+        <attr name="right_text_size" format="dimension|reference" />
+    </declare-styleable>
+
+    <!--圆角ImageView-->
+    <declare-styleable name="RoundRectImageView">
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchView">
+        <attr name="hasShadow" format="boolean" />
+        <attr name="primaryColor" format="color" />
+        <attr name="primaryColorDark" format="color" />
+        <attr name="isOpened" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="VerifyCodeView">
+        <attr name="input_count" format="integer" />
+        <attr name="text_color" format="color|reference" />
+        <attr name="text_size" format="dimension|reference" />
+        <attr name="item_size" format="dimension|reference" />
+        <attr name="code_bg" format="enum">
+            <enum name="flat" value="1" />
+            <enum name="shadow" value="2" />
+        </attr>
+        <attr name="input_type" format="enum">
+            <enum name="number" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ShadowLayout">
+        <attr name="sl_radius" format="dimension|reference" />
+        <attr name="sl_shadow_elevation" format="dimension|reference" />
+        <attr name="sl_shadow_alpha" format="float" />
+        <attr name="sl_shadow_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiStatusLayout">
+        <attr name="loadingLayout" format="reference" />
+        <attr name="emptyLayout" format="reference" />
+        <attr name="netErrorLayout" format="reference" />
+        <attr name="errorLayout" format="reference" />
+        <attr name="otherLayout" format="reference" />
+        <attr name="targetViewId" format="reference" />
+    </declare-styleable>
+</resources>

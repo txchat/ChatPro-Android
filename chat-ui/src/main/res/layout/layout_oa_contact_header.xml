@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:paddingHorizontal="15dp"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/biz_color_accent_light">
+
+        <ImageView
+            android:id="@+id/iv_ep_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/default_avatar_ep" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@+id/id_more"
+            android:layout_toEndOf="@+id/iv_ep_avatar"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ep_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="16sp"
+                tools:text="杭州复杂美科技有限公司" />
+
+            <TextView
+                android:id="@+id/ep_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="14sp"
+                tools:text="团队号 HZFZM0001" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/id_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_item_operation_grey" />
+    </RelativeLayout>
+</FrameLayout>

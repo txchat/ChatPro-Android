@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rtc_dialog_confirm_hangup">确定要结束通话吗？</string>
+    <string name="rtc_tips_waiting_for_answer">正在等待对方接受邀请…</string>
+    <string name="rtc_tips_audio_call_incoming">邀请你语音通话…</string>
+    <string name="rtc_tips_video_call_incoming">邀请你视频通话…</string>
+
+    <string name="rtc_action_hangup">挂断</string>
+    <string name="rtc_action_accept">接听</string>
+    <string name="rtc_action_reject">拒绝</string>
+    <string name="rtc_action_mic_mute">静音</string>
+    <string name="rtc_action_hands_free">免提</string>
+    <string name="rtc_action_switch_audio">切到语音通话</string>
+    <string name="rtc_action_switch_camera">转换摄像头</string>
+</resources>

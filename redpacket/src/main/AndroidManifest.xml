@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fzm.chat.redpacket">
+
+    <application>
+        <activity
+            android:name=".ui.SendRedPacketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.RedPacketDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.RedPacketRecordActivity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

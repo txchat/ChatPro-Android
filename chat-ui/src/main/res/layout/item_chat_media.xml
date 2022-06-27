@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fzm.chat.widget.ChatRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="@color/biz_color_primary">
+
+    <ImageView
+        android:id="@+id/iv_media"
+        android:layout_width="87.5dp"
+        android:layout_height="87.5dp"
+        android:layout_centerInParent="true"
+        android:maxHeight="100dp"
+        android:scaleType="centerCrop"
+        android:transitionName="shareImage" />
+
+    <ImageView
+        android:id="@+id/iv_video"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_msg_video_play" />
+
+    <com.qmuiteam.qmui.widget.QMUIProgressBar
+        android:id="@+id/pb_video"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:qmui_background_color="@android:color/transparent"
+        app:qmui_progress_color="@color/biz_color_progress"
+        app:qmui_stroke_width="25dp"
+        app:qmui_type="type_circle" />
+
+    <CheckBox
+        android:id="@+id/cb_select"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@+id/iv_media"
+        android:layout_alignEnd="@+id/iv_media"
+        android:layout_marginTop="7.5dp"
+        android:layout_marginEnd="7.5dp"
+        android:button="@drawable/media_checkbox" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/iv_media"
+        android:layout_alignBottom="@+id/iv_media"
+        android:padding="2dp"
+        android:textColor="@color/biz_color_accent_light"
+        android:visibility="gone"
+        tools:text="00:23" />
+</com.fzm.chat.widget.ChatRelativeLayout>

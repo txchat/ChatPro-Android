@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.king.zxing.ViewfinderView
+        android:id="@+id/viewfinderView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cornerColor="@color/biz_color_accent"
+        app:frameColor="@color/biz_color_accent"
+        app:laserColor="@color/biz_color_accent" />
+
+    <ImageView
+        android:id="@+id/ivTorch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/torchMarginTop"
+        android:src="@drawable/zxl_torch_selector" />
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back"
+        app:right_text="@string/chat_action_open_photo"
+        app:right_text_color="@color/biz_color_accent"
+        app:title_text_color="@color/biz_color_accent" />
+</FrameLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--app通用错误码-->
+    <string name="core_error_unknown">未知错误</string>
+    <string name="core_error_decrypt_fail">解密失败</string>
+    <string name="core_error_encrypt_fail">加密失败</string>
+    <string name="core_error_create_words_fail">创建助记词失败</string>
+    <string name="core_error_save_words_fail">保存助记词失败</string>
+
+    <string name="core_channel_notification">其他通知</string>
+    <string name="core_channel_notification_desc">下载等场景使用的通知类别</string>
+    <string name="core_channel_message">新消息通知</string>
+    <string name="core_channel_message_desc">收到新消息时使用的通知类别</string>
+    <string name="core_channel_rtc">音视频通话邀请通知</string>
+    <string name="core_channel_rtc_desc">收到音视频通话邀请的通知类别</string>
+
+    <!--消息类型-->
+    <string name="core_msg_type1">[公告]</string>
+    <string name="core_msg_type2">[语音]</string>
+    <string name="core_msg_type3">[图片]</string>
+    <string name="core_msg_type4">[红包]</string>
+    <string name="core_msg_type5">[视频]</string>
+    <string name="core_msg_type6">[文件]</string>
+    <string name="core_msg_type7">[通知]</string>
+    <string name="core_msg_type8">[聊天记录]</string>
+    <string name="core_msg_type9_1">[语音通话]</string>
+    <string name="core_msg_type9_2">[视频通话]</string>
+    <string name="core_msg_type10">[转账]</string>
+    <string name="core_msg_type11">[收款]</string>
+    <string name="core_msg_type12">[红包]</string>
+    <string name="core_msg_type13_1">[个人名片]</string>
+    <string name="core_msg_type13_2">[群名片]</string>
+    <string name="core_msg_type13_3">[团队名片]</string>
+    <string name="core_msg_type_special">[特殊消息]</string>
+    <string name="core_msg_type_unknown">[不支持的消息类型]</string>
+    <string name="core_msg_type_transfer_out">转账给对方</string>
+    <string name="core_msg_type_transfer_in">转账给你</string>
+    <string name="core_msg_type_receipt_out">向对方收款</string>
+    <string name="core_msg_type_receipt_in">向你收款</string>
+
+    <string name="core_forward_title_others_and_others">[%1$s]与[%2$s]的聊天记录</string>
+    <string name="core_forward_title_group">群聊的聊天记录</string>
+
+    <string name="core_notification_unread_number">[%1$d条]</string>
+</resources>

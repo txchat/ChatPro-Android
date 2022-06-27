@@ -1,0 +1,2 @@
+-keep class com.fzm.oss.sdk.** { *; }
+-dontwarn okio.**

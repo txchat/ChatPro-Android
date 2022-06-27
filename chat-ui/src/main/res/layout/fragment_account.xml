@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/biz_color_primary_dark">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginHorizontal="15dp"
+            android:layout_toStartOf="@+id/iv_search"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/biz_color_title"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/iv_add"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:srcCompat="@drawable/icon_home_search" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/iv_scan"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:srcCompat="@drawable/icon_home_add" />
+
+        <ImageView
+            android:id="@+id/iv_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:srcCompat="@drawable/icon_home_scan" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biz_color_primary_dark"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp">
+
+                <com.fzm.chat.biz.widget.ChatAvatarView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@mipmap/default_avatar_round"
+                    android:transitionName="shareImage"
+                    app:iconSize="25dp" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_avatar"
+                    android:layout_alignStart="@+id/iv_avatar"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/biz_color_title"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:transitionName="shareName"
+                    app:drawableEndCompat="@drawable/ic_edit"
+                    tools:text="有一只鱼" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name"
+                    android:layout_alignStart="@+id/tv_name"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="5dp"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="14sp"
+                    android:transitionName="shareAddress"
+                    app:drawableEndCompat="@drawable/ic_copy"
+                    tools:text="UID 123456" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_qr"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="15dp"
+                    app:bl_corners_radius="5dp"
+                    app:bl_solid_color="@color/biz_color_primary">
+
+                    <ImageView
+                        android:id="@+id/iv_qr_code"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerInParent="true"
+                        android:transitionName="shareQR" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_to_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="15dp"
+                android:src="@mipmap/icon_tolive"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                tools:listitem="@layout/item_account_menu" />
+
+            <com.fzm.widget.ShadowLayout
+                android:id="@+id/fl_exit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                app:sl_radius="20dp">
+
+                <TextView
+                    android:id="@+id/exit_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/chat_action_logout"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="16sp" />
+            </com.fzm.widget.ShadowLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_import">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_mnem"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/chat_login_import_mnem_hint"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="#333649"
+                android:textColorHint="#8E92A3"
+                android:textCursorDrawable="@drawable/ic_cursor_accent"
+                android:textSize="16sp"
+                app:bl_corners_radius="6dp"
+                app:bl_solid_color="#F8F8FA" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/chat_login_import_mnem_support_tips"
+                android:textColor="@color/biz_color_accent" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_import"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="15dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/chat_login_start_import_account"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        app:bl_corners_radius="6dp"
+        app:bl_enabled_solid_color="@color/biz_color_accent"
+        app:bl_unEnabled_solid_color="@color/biz_color_disabled" />
+</RelativeLayout>

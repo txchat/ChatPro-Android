@@ -1,0 +1,183 @@
+// protoc -I=. -I=$GOPATH/src --go_out=plugins=grpc:. *.proto
+syntax = "proto3";
+
+package dtalk.biz.signal;
+
+import "biz.proto";
+option go_package = ".;proto";
+
+/*---------------------应用内信令---------------------*/
+message Msg {
+  int32 action = 1;
+  bytes body = 2;
+  int64 sid = 3;
+  bool reliable = 4;
+}
+
+enum ActionType {
+  // 消息送达通知
+  Received = 0;
+  // 消息撤回通知
+  Revoke = 1;
+  // 加入群聊通知
+  JoinGroup = 10;
+  // 退出群聊通知
+  ExitGroup = 11;
+  // 解散群聊通知
+  DisbandGroup = 12;
+  // 收到关注消息通知
+  FocusMessage = 13;
+  // 多端登录
+  EndPointLogin = 14;
+
+  //
+  UpdateGroupJoinType = 20;
+  UpdateGroupFriendType = 21;
+  UpdateGroupMuteType = 22;
+  UpdateGroupMemberType = 23;
+  UpdateGroupMemberMuteTime = 24;
+  UpdateGroupName = 25;
+  UpdateGroupAvatar = 26;
+
+  // RTC通信
+  startCall = 31;
+  acceptCall = 32;
+  stopCall = 33;
+}
+
+message SignalReceived {
+  repeated int64 logId = 1;
+}
+
+message SignalRevoke {
+  int64 logId = 1;
+  string operator = 2;
+}
+
+message SignalJoinGroup {
+  repeated string address = 1;
+  int64 group = 2;
+  uint64 time = 3;
+}
+
+message SignalExitGroup {
+  repeated string address = 1;
+  int64 group = 2;
+  uint64 time = 3;
+}
+
+message SignalDisbandGroup {
+  int64 group = 1;
+  uint64 time = 2;
+}
+
+message SignalFocusMessage {
+  // 关注的消息id
+  int64 logId = 1;
+  // 关注者的uid
+  string uid = 2;
+  // 当前的关注数量
+  int32 currentNum = 3;
+  // 关注时间
+  int64 datetime = 4;
+}
+
+enum JoinType {
+  JoinAllow = 0;
+  JoinDeny = 1;
+}
+
+message SignalUpdateGroupJoinType {
+  int64 group = 1;
+  JoinType type = 2;
+  uint64 time = 3;
+}
+
+enum FriendType {
+  FriendAllow = 0;
+  FriendDeny = 1;
+}
+
+message SignalUpdateGroupFriendType {
+  int64 group = 1;
+  FriendType type = 2;
+  uint64 time = 3;
+}
+
+enum MuteType {
+  NotMute = 0;
+  MuteAll = 1;
+}
+
+message SignalUpdateGroupMuteType {
+  int64 group = 1;
+  MuteType type = 2;
+  uint64 time = 3;
+}
+
+enum MemberType {
+  Normal = 0;
+  Admin = 1;
+  Owner = 2;
+}
+
+message SignalUpdateGroupMemberType {
+  int64 group = 1;
+  string uid = 2;
+  MemberType type = 3;
+  uint64 time = 4;
+}
+
+message SignalUpdateGroupMemberMuteTime {
+  int64 group = 1;
+  repeated string uid = 2;
+  int64 muteTime = 3;
+  uint64 time = 4;
+}
+
+message SignalUpdateGroupName {
+  int64 group = 1;
+  string name = 2;
+  uint64 time = 3;
+}
+
+message SignalUpdateGroupAvatar {
+  int64 group = 1;
+  string avatar = 2;
+  uint64 time = 3;
+}
+
+message SignalStartCall {
+  int64 traceId = 1;
+}
+
+message SignalAcceptCall {
+  int64 traceId = 1;
+  int32 roomId = 2;
+  string invitee = 3;
+  string signature = 4;
+  string privateMapKey = 5;
+  int32 sdkAppId = 6;
+}
+
+enum StopCallReason {
+  LineBusy = 0;
+  // 服务端不发这个通知，只在客户端处理
+  Timeout = 1;
+  Reject = 2;
+  Hangup = 3;
+  Cancel = 4;
+}
+
+message SignalStopCall {
+  int64 traceId = 1;
+  StopCallReason reason = 2;
+}
+
+// 多端登录
+message SignalEndpointLogin {
+  string uuid  = 1;
+  biz.Device device = 2;
+  string deviceName = 3;
+  uint64 datetime = 4;
+}

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_accent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_white"
+        app:title_text_color="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biz_color_primary"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_share_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/share_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:background="@color/biz_color_accent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/share_head"
+                    android:layout_marginTop="-30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    app:bl_corners_topLeftRadius="30dp"
+                    app:bl_corners_topRightRadius="30dp"
+                    app:bl_solid_color="@color/biz_color_primary">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="65dp"
+                        android:gravity="center"
+                        android:maxLength="20"
+                        android:maxLines="2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:textColor="@color/biz_color_title"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:transitionName="shareName" />
+
+                    <TextView
+                        android:id="@+id/tv_uid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="14sp"
+                        android:transitionName="shareAddress" />
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:padding="10dp"
+                        app:bl_corners_radius="5dp"
+                        app:bl_solid_color="@color/biz_color_primary_dark">
+
+                        <ImageView
+                            android:id="@+id/iv_my_qr"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:transitionName="shareQR"
+                            app:srcCompat="@drawable/icon_home_qr" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/share_head"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-85dp"
+                    android:padding="5dp"
+                    app:bl_corners_radius="7dp"
+                    app:bl_solid_color="@color/biz_color_primary">
+
+                    <com.fzm.chat.biz.widget.ChatAvatarView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/default_avatar_round"
+                        android:transitionName="shareImage"
+                        app:iconSize="15dp" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_download_url"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="25dp"
+                android:drawablePadding="5dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="18.5dp"
+                android:textColor="@color/biz_color_accent"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="@color/biz_color_primary_dark"
+                app:drawableEndCompat="@drawable/ic_copy"
+                tools:text="https://dsafasdfasdfasdklsdajfkljaksldjfklsjklasdjlkfdsafasdfasdfasdklsdajfkljaksldjfklsjklasdjlkf" />
+
+            <TextView
+                android:id="@+id/tv_copy_address"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="@string/chat_action_copy_address"
+                android:textColor="@color/biz_color_accent"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:bl_corners_radius="20dp"
+                app:bl_solid_color="@color/biz_color_accent_light" />
+
+            <LinearLayout
+                android:id="@+id/ll_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/ll_share_chat33"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/ic_chat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_qr_share_chat"
+                        android:textColor="@color/biz_color_primary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_save"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:gravity="bottom|center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        app:srcCompat="@drawable/ic_save" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_qr_save"
+                        android:textColor="@color/biz_color_primary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

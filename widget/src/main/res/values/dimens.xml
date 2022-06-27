@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--CustomTopTitleBar-->
+    <dimen name="widget_titleBar_title">17sp</dimen>
+    <dimen name="widget_titleBar_text">16sp</dimen>
+    <dimen name="widget_titleBar_textMargin">10dp</dimen>
+</resources>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary_dark"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/biz_wallet_accent"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:right_icon="@drawable/ic_wallet_scan" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                app:bl_corners_bottomLeftRadius="30dp"
+                app:bl_corners_bottomRightRadius="30dp"
+                app:bl_solid_color="@color/biz_wallet_accent" />
+
+            <com.fzm.widget.ShadowLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="15dp"
+                app:sl_radius="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_coin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="16sp"
+                        tools:text="BTY" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_coin"
+                        android:layout_alignStart="@+id/tv_coin"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/specialtext"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="30sp"
+                        tools:text="64.00" />
+
+                    <ImageView
+                        android:id="@+id/iv_code"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_code"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="middle"
+                        android:singleLine="true"
+                        android:textColor="@color/biz_text_grey_light"
+                        app:drawableEndCompat="@drawable/ic_copy" />
+
+                </RelativeLayout>
+            </com.fzm.widget.ShadowLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_transfer"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="转账"
+                android:textColor="@android:color/white"
+                app:bl_corners_radius="20dp"
+                app:bl_solid_color="@color/biz_text_grey_dark" />
+
+            <TextView
+                android:id="@+id/tv_receipt"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="收款"
+                android:textColor="@android:color/white"
+                app:bl_corners_radius="20dp"
+                app:bl_solid_color="@color/biz_wallet_accent" />
+
+            <TextView
+                android:id="@+id/tv_shop_transfer"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="划转至商城"
+                android:textColor="@android:color/white"
+                app:bl_corners_radius="20dp"
+                app:bl_solid_color="@color/biz_color_accent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:bl_corners_topLeftRadius="25dp"
+            app:bl_corners_topRightRadius="25dp"
+            app:bl_solid_color="@color/biz_color_primary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_transaction_list" />
+
+            <TextView
+                android:id="@+id/tv_record_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="交易记录"
+                android:textColor="@color/biz_text_grey_dark" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/biz_color_divider" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/biz_color_primary">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                app:tl_indicator_anim_enable="true"
+                app:tl_indicator_color="@color/biz_color_accent_light"
+                app:tl_indicator_corner_radius="17dp"
+                app:tl_indicator_height="34dp"
+                app:tl_indicator_style="BLOCK"
+                app:tl_tab_padding="18dp"
+                app:tl_textBold="SELECT"
+                app:tl_textSelectColor="@color/biz_color_accent"
+                app:tl_textUnselectColor="@color/biz_text_grey_light"
+                app:tl_textsize="16sp" />
+        </FrameLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_transactions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/biz_color_primary" />
+    </LinearLayout>
+</LinearLayout>

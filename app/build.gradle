@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+apply from: common
+apply from: publish
+
+android {
+
+    defaultConfig {
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    productFlavors {
+        chat33pro {
+            versionCode version_code
+            versionName version_name
+            applicationId "com.fzm.chatpro"
+        }
+        assets {
+            versionCode assets_version_code
+            versionName assets_version_name
+            applicationId "com.orginone.chat"
+        }
+        police {
+            versionCode police_version_code
+            versionName police_version_name
+            applicationId "com.police.chat"
+        }
+        zhchat {
+            versionCode zhchat_version_code
+            versionName zhchat_version_name
+            applicationId "com.zhchat.chat"
+        }
+        develop {
+            applicationIdSuffix '.develop'
+        }
+    }
+
+    packagingOptions {
+        pickFirst '**/libgojni.so'
+        pickFirst 'META-INF/library_release.kotlin_module'
+        pickFirst '**/libc++_shared.so'
+        doNotStrip "*/armeabi/libYTCommon.so"
+        doNotStrip "*/armeabi-v7a/libYTCommon.so"
+        doNotStrip "*/x86/libYTCommon.so"
+        doNotStrip "*/arm64-v8a/libYTCommon.so"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force deps.androidx.appcompat
+        force deps.androidx.core
+        force deps.androidx.core_ktx
+        force deps.androidx.activity
+        force deps.androidx.activity_ktx
+        force deps.androidx.fragment
+        force deps.androidx.fragment_ktx
+        force deps.androidx.constraint_layout
+        force deps.androidx.cardview
+        force deps.androidx.annotation
+        force deps.androidx.recyclerview
+        force deps.androidx.documentfile
+        force deps.androidx.viewpager2
+
+        force deps.lifecycle.viewmodel_ktx
+        force deps.lifecycle.livedata_ktx
+        force deps.lifecycle.runtime
+        force deps.lifecycle.runtime_ktx
+        force deps.lifecycle.savedstate
+    }
+}
+
+dependencies {
+
+    implementation project(':business')
+    runtimeOnly project(':chat-core')
+    runtimeOnly project(':chat-ui')
+    runtimeOnly project(':chat-oa')
+    runtimeOnly project(':wallet')
+    runtimeOnly project(':redpacket')
+    runtimeOnly project(':function:lib-push')
+    runtimeOnly project(':function:rtc')
+    runtimeOnly project(':lib-picture')
+
+//    runtimeOnly project(':oss:oss-aliyun')
+//    runtimeOnly project(':oss:oss-huaweiyun')
+    runtimeOnly project(':oss:oss-chat')
+
+    kapt deps.arouter.compiler
+
+    implementation 'com.qmuiteam:qmui:1.4.4'
+
+    debugImplementation deps.leak_canary
+    debugImplementation deps.db_glance
+}

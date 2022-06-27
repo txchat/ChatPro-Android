@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pull_extend"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_wallet_accent"
+    tools:ignore="MissingPrefix">
+
+    <com.fzm.chat.biz.widget.pullheader.WechatPullHeader
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.fzm.chat.biz.widget.pullheader.WechatPullHeader$HeaderScrollBehavior"/>
+
+    <com.fzm.chat.biz.widget.pullheader.ExtendPoint
+        android:id="@+id/extent_point"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/biz_color_primary"
+        app:layout_behavior="com.fzm.chat.biz.widget.pullheader.ExtendPoint$ExtendBehavior" />
+
+    <com.fzm.chat.biz.widget.pullheader.WechatPullContent
+        android:id="@+id/home_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:layout_behavior="com.fzm.chat.biz.widget.pullheader.WechatPullContent$ContentScrollBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    app:tl_indicator_anim_enable="true"
+                    app:tl_indicator_color="@color/biz_color_accent_light"
+                    app:tl_indicator_corner_radius="17dp"
+                    app:tl_indicator_height="34dp"
+                    app:tl_indicator_style="BLOCK"
+                    app:tl_tab_padding="18dp"
+                    app:tl_textBold="SELECT"
+                    app:tl_textSelectColor="@color/biz_color_accent"
+                    app:tl_textUnselectColor="@color/biz_text_grey_light"
+                    app:tl_textsize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/iv_add"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:srcCompat="@drawable/icon_home_search" />
+
+                <ImageView
+                    android:id="@+id/iv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/iv_scan"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:srcCompat="@drawable/icon_home_add" />
+
+                <ImageView
+                    android:id="@+id/iv_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    app:srcCompat="@drawable/icon_home_scan" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_disconnect"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/biz_red_tips_light"
+                android:gravity="center"
+                android:text="@string/chat_home_server_disconnect"
+                android:textColor="@color/biz_red_tips"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.fzm.widget.NoScrollViewPager
+                android:id="@+id/vp_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </com.fzm.chat.biz.widget.pullheader.WechatPullContent>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

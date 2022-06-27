@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/scan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_scan"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_scan" />
+
+    <TextView
+        android:id="@+id/join"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_search"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_join" />
+
+    <TextView
+        android:id="@+id/create_group"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_create_group"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_create_group" />
+
+    <TextView
+        android:id="@+id/qr_code"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_my_qr_code"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_my_qr" />
+
+    <TextView
+        android:id="@+id/create_company"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_create_company"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_create_team" />
+
+    <TextView
+        android:id="@+id/okr"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:drawablePadding="13dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/chat_home_action_okr"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/icon_action_okr" />
+</LinearLayout>

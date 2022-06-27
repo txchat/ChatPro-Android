@@ -1,0 +1,69 @@
+import groovy.json.JsonSlurper
+
+task packChat33Pro(description: "打包谈信正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductChat33proRelease") {
+    doLast {
+        def jsonFile = file("${rootDir}\\app\\build\\outputs\\apk\\productChat33pro\\release\\output-metadata.json")
+        def json = new JsonSlurper().parseText(jsonFile.text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            println "Upload $versionName mapping file to Bugly..."
+            exec {
+                commandLine "cmd", "/c", "java -Dfile.encoding=UTF-8 -jar ${rootDir}\\utils\\buglyqq-upload-symbol.jar -appid 4fe4fb6a7c -appkey 6aa62be0-b424-444c-8d67-438d00924617 -bundleid com.fzm.chatpro -version ${versionName} -platform Android -inputMapping ${rootDir}\\app\\build\\outputs\\mapping\\productChat33proRelease"
+            }
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productChat33pro\\release"
+        }
+    }
+}
+
+task packOrginone(description: "打包Orginone正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductAssetsOrgSign") {
+    doLast {
+        def jsonFile = file("${rootDir}\\app\\build\\outputs\\apk\\productAssets\\orgSign\\output-metadata.json")
+        def json = new JsonSlurper().parseText(jsonFile.text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            println "Upload $versionName mapping file to Bugly..."
+            exec {
+                commandLine "cmd", "/c", "java -Dfile.encoding=UTF-8 -jar ${rootDir}\\utils\\buglyqq-upload-symbol.jar -appid a1fcdadc3f -appkey e850cd7a-58e6-48b9-96cf-77e7f6325a32 -bundleid com.orginone.chat -version ${versionName} -platform Android -inputMapping ${rootDir}\\app\\build\\outputs\\mapping\\productAssetsOrgSign"
+            }
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productAssets\\orgSign"
+        }
+    }
+}
+
+task packPolice(description: "打包谈信公安版正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductPolicePoliceSign") {
+    doLast {
+        def jsonFile = file("${rootDir}\\app\\build\\outputs\\apk\\productPolice\\policeSign\\output-metadata.json")
+        def json = new JsonSlurper().parseText(jsonFile.text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            println "Upload $versionName mapping file to Bugly..."
+            exec {
+                commandLine "cmd", "/c", "java -Dfile.encoding=UTF-8 -jar ${rootDir}\\utils\\buglyqq-upload-symbol.jar -appid aaf5b5b14d -appkey 18b47db3-fa69-4cbb-b3f5-c46e24f1df06 -bundleid com.police.chat -version ${versionName} -platform Android -inputMapping ${rootDir}\\app\\build\\outputs\\mapping\\productPolicePoliceSign"
+            }
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productPolice\\policeSign"
+        }
+    }
+}
+
+task packZhchat(description: "打包ZH-CHAT正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductZhchatOrgSign") {
+    doLast {
+        def jsonFile = file("${rootDir}\\app\\build\\outputs\\apk\\productZhchat\\orgSign\\output-metadata.json")
+        def json = new JsonSlurper().parseText(jsonFile.text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            println "Upload $versionName mapping file to Bugly..."
+            exec {
+                commandLine "cmd", "/c", "java -Dfile.encoding=UTF-8 -jar ${rootDir}\\utils\\buglyqq-upload-symbol.jar -appid fbcf392208 -appkey 6f6be309-bedc-4500-abff-c7b93c419e2b -bundleid com.zhchat.chat -version ${versionName} -platform Android -inputMapping ${rootDir}\\app\\build\\outputs\\mapping\\productZhchatOrgSign"
+            }
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productZhchat\\orgSign"
+        }
+    }
+}

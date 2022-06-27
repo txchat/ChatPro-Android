@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333649"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#333649"
+        app:left_icon="@drawable/biz_ic_back_white"
+        app:right_text="@string/chat_login_backup_mnem"
+        app:right_text_color="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/tv_large_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/chat_login_title_create_mnem"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lv_chinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_chinese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chat_login_mnem_chinese"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view_chinese"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/biz_color_accent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lv_english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chat_login_mnem_english"
+                    android:textColor="#8E92A3"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view_english"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:background="@color/biz_color_accent"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="29dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="@string/chat_login_tips_remember_mnem"
+        android:textColor="#8E92A3" />
+
+    <TextView
+        android:id="@+id/tv_mnem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="71dp"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.5"
+        android:paddingLeft="8dp"
+        android:paddingTop="30dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="25dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:bl_corners_radius="3dp"
+        app:bl_stroke_color="#D9DCE9"
+        app:bl_stroke_width="0.5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2B292F"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/chat_login_warn_secure_mnem"
+            android:textColor="@android:color/white"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <Button
+                android:id="@+id/btn_change_mnem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/chat_login_change_mnem"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                app:bl_corners_radius="6dp"
+                app:bl_stroke_color="#D9DCE9"
+                app:bl_stroke_width="0.5dp" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="43dp"
+                android:layout_weight="1"
+                android:text="@string/chat_login_backup_skip"
+                android:textColor="@android:color/white"
+                android:textSize="17sp"
+                app:bl_corners_radius="6dp"
+                app:bl_enabled_solid_color="@color/biz_color_accent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

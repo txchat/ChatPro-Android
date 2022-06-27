@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/msg_sending"-->
+<!--        style="?android:attr/progressBarStyleSmall"-->
+<!--        android:layout_width="15dp"-->
+<!--        android:layout_height="15dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:indeterminateDrawable="@drawable/message_sending"-->
+<!--        android:visibility="gone"-->
+<!--        tools:visibility="visible" />-->
+
+    <ImageView
+        android:id="@+id/msg_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp" />
+</FrameLayout>

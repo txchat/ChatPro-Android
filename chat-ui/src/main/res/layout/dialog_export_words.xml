@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    app:bl_corners_radius="10dp"
+    app:bl_solid_color="@color/biz_color_primary">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_close_dialog" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/chat_tips_export_words"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="4dp"
+        android:text="@string/chat_save_words_tip"
+        android:textColor="@color/biz_red_tips" />
+
+    <TextView
+        android:id="@+id/tv_words"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:lineSpacingExtra="4dp"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="12dp"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/biz_color_primary_dark"
+        tools:ignore="MissingPrefix"
+        tools:text="床前明  月光疑  是地上  \n霜举头  望明月" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/bg_round_accent_solid_20">
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="@string/biz_copy"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+</LinearLayout>

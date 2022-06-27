@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_text="@string/biz_cancel"
+        app:left_text_color="@color/biz_color_accent"
+        app:title_text="@string/wallet_title_add_coins" />
+
+    <LinearLayout
+        android:id="@+id/ll_search_coins"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:transitionName="searchView"
+        app:bl_corners_radius="20dp"
+        app:bl_solid_color="@color/biz_color_primary_dark">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:transitionName="searchIcon"
+            app:srcCompat="@drawable/ic_search_grey" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start|center_vertical"
+            android:text="@string/wallet_tips_search_coins"
+            android:textColor="@color/biz_text_grey_light"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/stl_chain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:tl_indicator_height="0dp"
+        app:tl_indicator_width="0dp"
+        app:tl_tab_padding="15dp"
+        app:tl_textBold="SELECT"
+        app:tl_textSelectColor="@color/biz_text_grey_dark"
+        app:tl_textUnselectColor="#8024374E"
+        app:tl_textsize="16sp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_coins"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

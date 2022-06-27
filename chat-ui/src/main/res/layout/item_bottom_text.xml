@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="15dp">
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/biz_text_grey_dark"
+        android:textSize="16sp"
+        tools:text="保存" />
+
+    <TextView
+        android:id="@+id/tv_sub_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:text="加群无需群主或管理员同意"
+        tools:visibility="visible" />
+</LinearLayout>

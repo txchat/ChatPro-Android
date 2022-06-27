@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="red_packet_remote_remark_tips">信息上链，可以在链上查询</string>
+    <string name="red_packet_total_amount_tips">普通红包为均分红包，若无法均分时，余数将随机分配</string>
+    <string name="red_packet_empty_record_tips">暂无红包记录</string>
+    <string name="red_packet_withdraw_surplus">申请退回剩余红包</string>
+</resources>

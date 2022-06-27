@@ -1,0 +1,166 @@
+// protoc -I=. -I=$GOPATH/src --go_out=plugins=grpc:. *.proto
+syntax = "proto3";
+
+package dtalk.biz.msg;
+option go_package = ".;proto";
+
+message Text {
+  string content = 1;
+  repeated string mention = 2;
+}
+
+message Audio {
+  string url = 1;
+  int32 time = 2;
+}
+
+message Image {
+  string url = 1;
+  int32 height = 2;
+  int32 width = 3;
+}
+
+message Video {
+  string url = 1;
+  int32 time = 2;
+  int32 height = 3;
+  int32 width = 4;
+}
+
+message File {
+  string url = 1;
+  string name = 2;
+  string md5 = 3;
+  int64 size = 4;
+}
+
+message Notification {
+  NotificationType type = 1;
+  bytes body = 2;
+}
+
+enum NotificationType {
+  // 修改群名
+  UpdateGroupName = 0;
+  // 加入群聊
+  JoinGroup = 1;
+  // 退出群聊
+  ExitGroup = 2;
+  // 踢出群聊
+  KickOut = 3;
+  // 解散群聊
+  DisbandGroup = 4;
+  // 修改群禁言模式
+  GroupMute = 5;
+  // 禁言群成员
+  GroupMemberMute = 6;
+  // 转让群主
+  GroupChangeOwner = 7;
+
+  // 撤回消息
+  RevokeMessage = 8;
+}
+
+message NotificationGroupName {
+  int64 group = 1;
+  string operator = 2;
+  string name = 3;
+}
+
+message NotificationJoinGroup {
+  int64 group = 1;
+  string inviter = 2;
+  repeated string members = 3;
+}
+
+message NotificationExitGroup {
+  int64 group = 1;
+  string operator = 2;
+}
+
+message NotificationKickOut {
+  int64 group = 1;
+  string operator = 2;
+  repeated string members = 3;
+}
+
+message NotificationDisbandGroup {
+  int64 group = 1;
+  string operator = 2;
+}
+
+message NotificationGroupMute {
+  int64 group = 1;
+  string operator = 2;
+  MuteType type = 3;
+
+  enum MuteType {
+    NotMute = 0;
+    MuteAll = 1;
+  }
+}
+
+message NotificationRevoke {
+  int64 logId = 1;
+  string operator = 2;
+}
+
+message NotificationGroupMemberMute {
+  int64 group = 1;
+  string operator = 2;
+  repeated string members = 3;
+}
+
+message NotificationGroupChangeOwner {
+  int64 group = 1;
+  string newOwner = 2;
+}
+
+message Forward {
+  repeated ForwardMsg logs = 1;
+}
+
+message ForwardMsg {
+  string avatar = 1;
+  string name = 2;
+  int32 msgType = 3;
+  bytes msg = 4;
+  uint64 datetime = 5;
+}
+
+enum CoinType {
+  Coins = 0;
+  Token = 1;
+}
+
+message Transfer {
+  string txHash = 1;
+  string coinName = 2;
+  string chain = 3;
+  string platform = 4;
+  CoinType coinType = 5;
+}
+
+message RedPacket {
+  string packetId = 1;
+  string coinName = 2;
+  string exec = 3;
+  enum RPType {
+    LUCKY = 0;
+    FAIR = 1;
+  }
+  RPType packetType = 4;
+  string privateKey = 5;
+  string remark = 6;
+  int64 expire = 7;
+  CoinType coinType = 8;
+}
+
+message ContactCard {
+  int32 type = 1;
+  string id = 2;
+  string avatar = 3;
+  string name = 4;
+  string server = 5;
+  string inviter = 6;
+}

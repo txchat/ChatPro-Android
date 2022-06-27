@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">谈信</string>
+
+    <string name="app_tab_session">消息</string>
+    <string name="app_tab_contact">通讯录</string>
+    <string name="app_tab_shop">商城</string>
+    <string name="app_tab_wallet">票券</string>
+    <string name="app_tab_account">我的</string>
+
+    <string name="app_splash_tips">多中心协作即时通讯\n分布式存储应用</string>
+    <string name="app_skip_bind_tips">您没有备份助记词，可通过绑定手机/邮箱和密聊密码加密上传至官方服务器，提供助记词找回服务。 为了您的账户安全，请务必自行备份或加密上传助记词，也可前往【安全管理】进行操作。</string>
+    <string name="app_skip_bind_phone">绑定手机</string>
+    <string name="app_skip_bind_email">绑定邮箱</string>
+</resources>

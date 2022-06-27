@@ -1,0 +1,91 @@
+// protoc -I=. -I=$GOPATH/src --go_out=plugins=grpc:. *.proto
+syntax = "proto3";
+
+package dtalk.biz;
+option go_package = ".;proto";
+
+enum Event {
+  message = 0;
+  messageReply = 1;
+  signaling = 2;
+}
+
+// Proto 中 Op 为 SendMsgReply 时， body 必须可以反序列化为 SendMsgAck
+message SendMsgAck {
+  int64 logId = 2;
+  uint64 datetime = 8;
+}
+
+enum Device {
+  Android = 0;
+  iOS = 1;
+  Windows = 2;
+  Linux = 3;
+  MacOS = 4;
+}
+
+message AuthExt {
+  enum ConnType {
+    Connect   = 0;
+    Reconnect = 1;
+  }
+  Device device = 1;
+  string nickname = 2;
+  string deviceToken = 3;
+  ConnType connType = 4;
+  string uuid = 5;
+  string deviceName = 6;
+}
+
+message AuthReply {
+  string uuid  = 1;
+  Device device = 2;
+  string deviceName = 3;
+  uint64 datetime = 4;
+}
+
+message Message {
+  int32 channelType = 1;
+  int64 logId = 2;
+  string msgId = 3;
+  string from = 4;
+  string target = 5;
+  MsgType msgType = 6;
+  bytes msg = 7;
+  uint64 datetime = 8;
+  Source source = 9;
+  Reference reference = 10;
+}
+
+message Source {
+  int32 channelType = 1;
+  SourceUser from = 2;
+  SourceUser target = 3;
+}
+
+message SourceUser {
+  string id = 1;
+  string name = 2;
+}
+
+message Reference {
+  int64 topic = 1;
+  int64 ref = 2;
+}
+
+enum MsgType {
+  System = 0;
+  Text = 1;
+  Audio = 2;
+  Image = 3;
+  Video = 4;
+  File = 5;
+  Card = 6;
+  Notification = 7;
+  Forward = 8;
+  RTCCall = 9;
+  Transfer = 10;
+  Receipt = 11;
+  RedPacket = 12;
+  ContactCard = 13;
+}

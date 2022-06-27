@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="70dp"
+    android:minWidth="210dp"
+    app:bl_corners_radius="5dp"
+    app:bl_solid_color="@color/biz_wallet_accent">
+
+    <ImageView
+        android:id="@+id/iv_transfer"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/fl_transfer"
+        android:src="@drawable/ic_msg_transfer" />
+
+    <FrameLayout
+        android:id="@+id/fl_transfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:id="@+id/ll_transfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_transfer_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="middle"
+                android:fontFamily="@font/specialtext"
+                android:maxWidth="165dp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="23sp"
+                tools:text="1000BTY" />
+
+            <TextView
+                android:id="@+id/tv_transfer_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                tools:text="你有一笔收款，点击查看" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_invalid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="交易信息不匹配，点击查看"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+    </FrameLayout>
+</RelativeLayout>

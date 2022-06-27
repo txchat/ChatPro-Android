@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/ll_empty"
+        layout="@layout/layout_search_empty"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_scope"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:ellipsize="middle"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:text="@string/chat_tips_search_history"
+            android:textColor="@color/biz_text_grey_light" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_result_logs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</FrameLayout>

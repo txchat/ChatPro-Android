@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingTop="10dp">
+
+    <com.fzm.widget.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:sl_radius="0dp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/biz_color_primary"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_reference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="10dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_reference"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="9dp"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="12sp"
+                    app:bl_corners_radius="5dp"
+                    app:bl_solid_color="@color/biz_text_grey_light_bg"
+                    tools:text="群昵称/昵称/地址：多出两行的省略号显示，点击这整个灰色区域显示全部内容，什么什么什么什么什…" />
+
+                <ImageView
+                    android:id="@+id/iv_clear_ref"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_close_light" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/chat_bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:minHeight="70dp">
+
+                <ImageView
+                    android:id="@+id/chat_input_type"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_chat_voice" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/iv_emoji"
+                    android:layout_toEndOf="@id/chat_input_type">
+
+                    <EditText
+                        android:id="@+id/et_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="flagNoExtractUi"
+                        android:maxHeight="120dp"
+                        android:maxLength="6000"
+                        android:minHeight="40dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textColorHighlight="@color/biz_text_highlight"
+                        android:textColorHint="@color/biz_text_grey_light"
+                        android:textCursorDrawable="@drawable/ic_cursor_accent"
+                        android:textSize="16sp"
+                        android:visibility="visible" />
+
+                    <com.fzm.chat.widget.AudioRecordButton
+                        android:id="@+id/btn_record"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_send_record_btn"
+                        android:text="@string/chat_record_state_prepared"
+                        android:textColor="@color/biz_color_accent"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btn_send"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="@string/chat_tips_input_send"
+                    android:textColor="@color/biz_color_accent"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/iv_other"
+                    android:layout_width="50dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_qita_add" />
+
+                <ImageView
+                    android:id="@+id/iv_emoji"
+                    android:layout_width="45dp"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/iv_other"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_emoji_add" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_emoji"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/biz_color_divider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_emoji"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="1dp"
+                    android:overScrollMode="never"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="8"
+                    tools:itemCount="21"
+                    tools:listitem="@layout/item_message_emoji" />
+
+                <com.fzm.widget.ShadowLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    app:sl_radius="5dp"
+                    app:sl_shadow_color="#E8EAEC"
+                    app:sl_shadow_elevation="5dp">
+
+                    <ImageView
+                        android:id="@+id/iv_delete"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/del_emoji_selector" />
+
+                </com.fzm.widget.ShadowLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/fl_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:overScrollMode="never"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="4"
+                    tools:itemCount="8"
+                    tools:listitem="@layout/item_message_type" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/biz_color_divider" />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.fzm.widget.ShadowLayout>
+</FrameLayout>

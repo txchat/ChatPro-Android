@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/biz_color_primary"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:title_text="@string/chat_action_del_group_user" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:layout_below="@+id/ctb_title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/biz_color_primary"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:background="@drawable/bg_round_accent_solid_20"
+            android:gravity="center"
+            android:text="@string/biz_delete"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+</RelativeLayout>

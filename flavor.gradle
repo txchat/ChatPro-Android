@@ -1,0 +1,139 @@
+def keystore = file("../sign/chat-pro.jks")
+def signProperties = file("../sign/sign.properties")
+
+android {
+    flavorDimensions "build_type", "channel"
+    productFlavors {
+        develop {
+            dimension "build_type"
+            buildConfigField "boolean", "DEVELOP", "true"
+        }
+        product {
+            dimension "build_type"
+            buildConfigField "boolean", "DEVELOP", "false"
+        }
+        chat33pro {
+            dimension "channel"
+        }
+        assets {
+            dimension "channel"
+        }
+        police {
+            dimension "channel"
+        }
+        zhchat {
+            dimension "channel"
+        }
+    }
+
+    signingConfigs {
+
+        debug {
+            if (keystore.exists() && signProperties.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(signProperties))
+                keyAlias props['KEY_ALIAS']
+                keyPassword props['KEY_PASSWORD']
+                storeFile keystore
+                storePassword props['STORE_PASSWORD']
+            }
+
+        }
+
+        release {
+            if (keystore.exists() && signProperties.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(signProperties))
+                keyAlias props['KEY_ALIAS']
+                keyPassword props['KEY_PASSWORD']
+                storeFile keystore
+                storePassword props['STORE_PASSWORD']
+            }
+
+        }
+
+        policeRelease {
+            Properties props = new Properties()
+            props.load(new FileInputStream(file("${rootDir}/sign/police-sign.properties")))
+            keyAlias props['KEY_ALIAS']
+            keyPassword props['KEY_PASSWORD']
+            storeFile file("${rootDir}/sign/police-chat.jks")
+            storePassword props['STORE_PASSWORD']
+        }
+
+        /**
+         * 其他项目方统一用这个签名（公安版除外）
+         */
+        orgSign {
+            if (signProperties.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(signProperties))
+                keyAlias props['KEY_ALIAS']
+                keyPassword props['KEY_PASSWORD']
+                storeFile file("../sign/orginone.jks")
+                storePassword props['STORE_PASSWORD']
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            //禁用PNG压缩
+            crunchPngs false
+        }
+        release {
+            signingConfig signingConfigs.release
+            zipAlignEnabled true
+            //启用代码压缩，混淆，优化
+            if (isIndependent()) {
+                //启用资源压缩
+                shrinkResources true
+            }
+            minifyEnabled true
+            //ProGuard规则文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+        policeSign {
+            signingConfig signingConfigs.policeRelease
+            zipAlignEnabled true
+            //启用代码压缩，混淆，优化
+            if (isIndependent()) {
+                //启用资源压缩
+                shrinkResources true
+            }
+            minifyEnabled true
+            //ProGuard规则文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+        orgSign {
+            signingConfig signingConfigs.orgSign
+            zipAlignEnabled true
+            //启用代码压缩，混淆，优化
+            if (isIndependent()) {
+                //启用资源压缩
+                shrinkResources true
+            }
+            minifyEnabled true
+            //ProGuard规则文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+    }
+
+//    lintOptions {
+//        abortOnError false
+//    }
+}
+
+def isIndependent() {
+    //是app module
+    if (this.name == "app") {
+        println("application module , this.name = ${this.name}")
+        return true
+    } else {
+        println("library module , this.name = ${this.name}")
+        return false
+    }
+}
